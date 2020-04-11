@@ -60,12 +60,25 @@
           </ul>
           <div class="header_r d-flex">
               {% if user.is_authenticated %}
-                  <div class="loin"> <a class="nav-link" href="#">Tài khoản : <b style="color: yellow;"> {{ request.user.username }}</b></a></div>
-                  {% else %}
-            <div class="loin"> <a class="nav-link" href="#" data-toggle="modal" data-target="#login"><i class="fa fa-user m-r-5"></i>Register/Sign In</a>  </div>
-            {% endif %}
+                   <div class="loin"> <a class="nav-link dropdown-toggle"
+                                         href="#" data-toggle="dropdown"
+                                         aria-haspopup="true"
+                                         aria-expanded="false"> <i class="fa fa-user m-r-5"></i> <b style="color: yellow;"> {{ request.user.username }}</b> </a>
+                        <ul class="b-none dropdown-menu font-14 animated fadeInUp">
+                            <li><a class="dropdown-item" href="">Thông tin tài khoản </a></li>
+                             <li><a class="dropdown-item" href="">Danh sách bài đăng</a></li>
+                            <li><a class="dropdown-item" href="{% url 'taikhoan:dangxuat' %}">Đăng xuất</a></li>
+                        </ul>
+                   </div>
+              {% else %}
+                  <div class="loin"> <a class="nav-link" href="#" data-toggle="modal" data-target="#login"><i class="fa fa-user m-r-5"></i>Register/Sign In</a>  </div>
+              {% endif %}
               <ul class="ml-auto post_ad">
-              <li class="nav-item search"><a class="nav-link" href="20-Post_Ad-Page.html">Post Your Ad</a></li>
+                  {% if user.is_authenticated %}
+              <li class="nav-item search"><a class="nav-link" href="#">Đăng Bán</a></li>
+                      {% else %}
+               <li class="nav-item search"><a class="nav-link" href="#"data-toggle="modal" data-target="#login">Đăng Bán</a></li>
+                  {% endif %}
             </ul>
           </div>
         </div>
@@ -77,7 +90,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Login to Classifieds Plus</h5>
+          <h5 class="modal-title">Đăng nhập</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">
               <img src="{% static 'images/close.png'%}"  alt="Classified Plus"></span> </button>
         </div>
@@ -92,7 +105,7 @@
             <form action="{% url 'taikhoan:dangnhap' %}" method="POST">
                 {% csrf_token %}
               <div class="row">
-                  {% if form.errors %}
+                  {% if form.error %}
                         <div class="alert alert-danger" style="margin: auto; margin-bottom:10px;">
                             <strong>Tài khoản hoặc mật khẩu không đúng</strong>
                         </div>
@@ -136,7 +149,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Login to Classifieds Plus</h5>
+          <h5 class="modal-title">Đăng kí</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">
               <img src="/static/images/close.png" alt="Classified Plus"></span> </button>
         </div>
@@ -148,33 +161,35 @@
           <div class="or-divider">
             <h6>or</h6>
           </div>
+            <form class="login_form row" method="post" action="{% url 'taikhoan:dangky' %}">
+                        {% csrf_token %}
           <div class="row">
             <div class="col-sm-12">
               <div class="form-group has-feedback">
-                <input type="text" class="form-control" name="log_username" placeholder="Name">
+                {{form.username}}
               </div>
             </div>
             <div class="col-sm-12">
               <div class="form-group has-feedback">
-                <input type="number" class="form-control" id="Phone_No" name="log_password" placeholder="Number">
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <div class="form-group has-feedback">
-                <input type="Email" class="form-control" id="Email" name="Email" placeholder="Email">
+                <input type="number" class="form-control" id="id_sdt" name="sdt" placeholder="Số điện thoại">
               </div>
             </div>
 
             <div class="col-sm-12">
               <div class="form-group has-feedback">
-                <input type="password" class="form-control" name="log_password" placeholder="Password">
+                <input type="Email" class="form-control" id="Email" name="email" placeholder="Email">
               </div>
             </div>
 
             <div class="col-sm-12">
               <div class="form-group has-feedback">
-                <input type="password" class="form-control" id="Confirm_password" name="Confirm_password" placeholder="Confirm Password">
+                <input type="password" class="form-control" name="password1" placeholder="Mật khẩu">
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+              <div class="form-group has-feedback">
+                <input type="password" class="form-control" id="Confirm_password" name="password2" placeholder="Nhập lại mật khẩu">
               </div>
             </div>
 
@@ -184,6 +199,7 @@
 				Continue
 			</button>
 		</div>
+            </form>
           <div class="form-info">
 			<p class="text-center p-b-10">By Register I agree to receive emails.</p>
 		</div>

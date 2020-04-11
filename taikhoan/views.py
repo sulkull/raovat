@@ -27,17 +27,13 @@ def dangky(request):
         'form': form,
     }
 
-    return render(request, 'simso/page-taikhoan/dangky.html', Data)
+    return render(request, 'raovat/header.html', Data)
 
 
 def verify(request):
     id = request.session['user_id']
     user = Profile.objects.get(id=id)
-    # Sắp xếp danh mục sim theo giá theo title
-    stg_dsx = sorted(stg, key=operator.attrgetter('title'))
-
     Data = {
-        "stg": stg_dsx,
     }
 
     if request.method == 'POST':
@@ -49,14 +45,14 @@ def verify(request):
 
             response = client.start_verification(
                 number=sdt,
-                brand="SimSoDucLoc",
+                brand="ChomMuaBan",
                 code_length="4")
             request.session['request_id'] = response["request_id"]
             return redirect('taikhoan:xacthucsdt')
         else:
             current_site = get_current_site(request)
             mail_subject = 'Kích hoạt tài khoản của bạn.'
-            message = render_to_string('simso/page-taikhoan/activeemail.html', {
+            message = render_to_string('raovat/user/activeemail.html', {
                 'taikhoan': user,
                 'domain': current_site.domain,
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
@@ -67,9 +63,9 @@ def verify(request):
                 mail_subject, message, to=[to_email]
             )
             email.send()
-            return render(request, 'simso/page-taikhoan/success.html', Data)
+            return render(request, 'raovat/user/success.html', Data)
 
-    return render(request, 'simso/page-taikhoan/verify.html', Data)
+    return render(request, 'raovat/user/verify.html', Data)
 
 
 def checkcode(request):
@@ -79,10 +75,10 @@ def checkcode(request):
     client = nexmo.Client(key=key, secret=secret)
     request_id = request.session['request_id']
     # Sắp xếp danh mục sim theo giá theo title
-    stg_dsx = sorted(stg, key=operator.attrgetter('title'))
+
 
     Data = {
-        "stg": stg_dsx,
+
     }
 
     if request.method == 'POST':
@@ -97,7 +93,7 @@ def checkcode(request):
             return redirect('sanpham:simso')
         else:
             error = "Mã xác thực không đúng!!!"
-    return render(request, 'simso/page-taikhoan/confirm.html', Data)
+    return render(request, 'raovat/user/confirm.html', Data)
 
 def activate(request, uidb64, token):
     try:
@@ -111,13 +107,13 @@ def activate(request, uidb64, token):
         login(request, user)
         return redirect('/')
     else:
-        return render(request, 'simso/page-taikhoan/error.html')
+        return render(request, 'raovat/user/error.html')
 
 
 def thongtintaikhoan(request):
     user = request.user
     if not user.is_authenticated:
-        return HttpResponseRedirect('/taikhoan/dang-nhap/')
+        return HttpResponseRedirect('/')
     firstname = user.first_name
     lastname = user.last_name
     email = user.email
