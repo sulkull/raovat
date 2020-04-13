@@ -1,94 +1,68 @@
 from django import forms
-import re
+from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import gettext
+
+from raovat.utils import handler_class_on_validate
 from .models import Profile
-from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import ValidationError
 
 
-class DangKyForm(forms.Form):
-
-    username = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Tài khoản','label':'Tài khoản'}))
+# register form
+class DangKyForm(UserCreationForm):
+    """
+    Used by the user to sign up with the website
+    """
+    username = forms.CharField(max_length=50, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'Tài khoản', 'label': 'Tài khoản'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Email'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Mật khẩu'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Nhập lại mật khẩu'}))
-    firstname = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Họ'}))
-    lastname = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Tên'}))
-    choices = [('0', 'Nam'), ('1', 'Nữ'), ('2', 'Không xác định')]
-    gioitinh = forms.ChoiceField(choices=choices, widget=forms.RadioSelect(attrs={'class': 'ul-none'}))
-    ngaysinh = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control', 'placeholder': 'Ngày sinh', 'type': 'date'}))
-    sdt = forms.CharField(max_length=10, widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Số điện thoại'}))
-    diachi = forms.CharField(max_length=400, widget=forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Địa chỉ'}))
+    SDT = forms.CharField(max_length=10,
+                          widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Số điện thoại'}))
+    password1 = forms.CharField(label='Password',
+                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Mật khẩu'}))
+    password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput(
+        attrs={'class': 'form-control', 'placeholder': 'Xác nhận mật khẩu'}))
 
-    def clean_password2(self):
-        if 'password1' in self.cleaned_data:
-            password1 = self.cleaned_data['password1']
-            password2 = self.cleaned_data['password2']
-            if password1 == password2 and password1:
-                return password2
-            raise forms.ValidationError("Mật khẩu không đúng")
-
-    def clean_username(self):
-        username = self.cleaned_data['username']
-        if not re.search(r'^\w+$', username):
-            raise forms.ValidationError("Tên tài khoản có chứa ký tự đặc biệt")
-        try:
-            Profile.objects.get(username=username)
-        except ObjectDoesNotExist:
-            return username
-        raise forms.ValidationError("Tài khoản đã tồn tại")
+    class Meta:
+        model = Profile
+        fields = ['username', 'email', 'SDT', 'password1', 'password2']
 
     def clean_email(self):
-        email = self.cleaned_data['email']
-        try:
-            Profile.objects.get(email=email)
-        except ObjectDoesNotExist:
-            return email
-        raise forms.ValidationError("Email đã tồn tại")
+        email = self.cleaned_data.get('email')
+        username = self.cleaned_data.get('username')
+        if Profile.objects.filter(email=email).exclude(username=username):
+            raise forms.ValidationError(u'Email addresses must be unique.')
+        return email
 
-    def clean_sdt(self):
-        sdt = self.cleaned_data['sdt']
-        try:
-            Profile.objects.get(SDT=sdt)
-        except ObjectDoesNotExist:
-            return sdt
-        raise forms.ValidationError("Số điện thoại đã tồn tại")
+    def clean_password2(self):
+        password1 = self.cleaned_data.get('password1')
+        password2 = self.cleaned_data.get('password2')
 
-    def save(self):
-        username = self.cleaned_data['username']
-        password = self.cleaned_data['password2']
-        email = self.cleaned_data['email']
-        firstname = self.cleaned_data['firstname']
-        lastname = self.cleaned_data['lastname']
-        gioitinh = self.cleaned_data['gioitinh']
-        ngaysinh = self.cleaned_data['ngaysinh']
-        sdt = self.cleaned_data['sdt']
-        diachi = self.cleaned_data['diachi']
+        if password1 != password2:
+            raise ValidationError("Passwords do not match")
 
-        Profile.objects.create_user(username=username,
-                                         password=password,
-                                         email=email,
-                                         first_name=firstname,
-                                         last_name=lastname,
-                                         GioiTinh=gioitinh,
-                                         NgaySinh=ngaysinh,
-                                         SDT=sdt,
-                                         DiaChi=diachi,
-                                         is_active=False)
+        return password2
 
-    def getiduser(self):
-        return Profile.objects.get(username=self.cleaned_data['username'])
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        user.is_active = True
+        if commit:
+            user.save()
+        return user
+
 
 class ThongTinForm(forms.Form):
+    avatar = forms.ImageField(widget=forms.FileInput(attrs={'style': 'display:none'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     firstname = forms.CharField(max_length=200, widget=forms.TextInput(attrs={'class': 'form-control'}))
     lastname = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
     choices = [('0', 'Nam'), ('1', 'Nữ'), ('2', 'Không xác định')]
-    gioitinh = forms.ChoiceField(choices=choices, widget=forms.RadioSelect(attrs={'class': 'form-check-input ul-none'}))
+    gioitinh = forms.ChoiceField(choices=choices, widget=forms.Select(attrs={'class': 'form-control'}))
     ngaysinh = forms.DateField(widget=forms.DateInput(attrs={'class': 'form-control', 'type': 'date'}))
     sdt = forms.CharField(max_length=10, widget=forms.TextInput(attrs={'class': 'form-control'}))
-    diachi = forms.CharField(max_length=1000, widget=forms.Textarea(attrs={'class': 'form-control'}))
+    diachi = forms.CharField(max_length=1000, widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop('taikhoan', None)
+        self.user = kwargs.pop('user', None)
         super(ThongTinForm, self).__init__(*args, **kwargs)
 
     def clean_email(self):
@@ -106,11 +80,13 @@ class ThongTinForm(forms.Form):
 
 class DoiMatKhauForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Mật khẩu'}))
-    newpassword = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Mật khẩu mới'}))
-    renewpassword = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Nhập lại mật khẩu mới'}))
+    newpassword = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Mật khẩu mới'}))
+    renewpassword = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Nhập lại mật khẩu mới'}))
 
     def __init__(self, *args, **kwargs):
-        self.user = kwargs.pop('taikhoan', None)
+        self.user = kwargs.pop('user', None)
         super(DoiMatKhauForm, self).__init__(*args, **kwargs)
 
     def clean_password(self):

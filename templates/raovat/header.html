@@ -20,7 +20,7 @@
   <div class="header">
     <div class="container po-relative">
       <nav class="navbar navbar-expand-lg hover-dropdown header-nav-bar">
-          <a href="index.html" class="navbar-brand"><img src="{% static 'images/logo.png'%}" alt="Classified Plus"></a>
+          <a href="{% url 'home:trang-chu' %}" class="navbar-brand"><img src="{% static 'images/logo.png'%}" alt="Classified Plus"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h5-info" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
         <div class="collapse navbar-collapse" id="h5-info">
           <ul class="navbar-nav">
@@ -65,8 +65,8 @@
                                          aria-haspopup="true"
                                          aria-expanded="false"> <i class="fa fa-user m-r-5"></i> <b style="color: yellow;"> {{ request.user.username }}</b> </a>
                         <ul class="b-none dropdown-menu font-14 animated fadeInUp">
-                            <li><a class="dropdown-item" href="">Thông tin tài khoản </a></li>
-                             <li><a class="dropdown-item" href="">Danh sách bài đăng</a></li>
+                            <li><a class="dropdown-item" href="{% url 'taikhoan:thongtintaikhoan' %}">Thông tin tài khoản </a></li>
+                             <li><a class="dropdown-item" href="{% url 'taikhoan:thongtintaikhoan' %}">Danh sách bài đăng</a></li>
                             <li><a class="dropdown-item" href="{% url 'taikhoan:dangxuat' %}">Đăng xuất</a></li>
                         </ul>
                    </div>
@@ -86,7 +86,7 @@
     </div>
   </div>
     <!-- Modal dang nhap -->
-  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -139,75 +139,11 @@
 		</div>
 
         </div>
-        <div class="register text-center">Not a member yet? <a href="#" data-toggle="modal" data-target="#register">Register</a></div>
+        <div class="register text-center">Not a member yet? <a href="{% url 'taikhoan:dangky' %}">Register</a></div>
       </div>
     </div>
   </div>
-
     <!-- Modal dang ki-->
-  <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Đăng kí</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">
-              <img src="/static/images/close.png" alt="Classified Plus"></span> </button>
-        </div>
-        <div class="modal-body">
-        <div class="list-unstyled list-inline social-login">
-        <a href="#" class="facebook"> <img src="{% static 'images/fb.png'%}" alt="Classified Plus">Continue wiith Facbook</a>
-        <a href="#" class="google"> <img src="{% static 'images/google_p.png'%}" alt="Classified Plus"> <span>Continue with Google</span></a>
-        </div>
-          <div class="or-divider">
-            <h6>or</h6>
-          </div>
-            <form class="login_form row" method="post" action="{% url 'taikhoan:dangky' %}">
-                        {% csrf_token %}
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="form-group has-feedback">
-                {{form.username}}
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="form-group has-feedback">
-                <input type="number" class="form-control" id="id_sdt" name="sdt" placeholder="Số điện thoại">
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <div class="form-group has-feedback">
-                <input type="Email" class="form-control" id="Email" name="email" placeholder="Email">
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <div class="form-group has-feedback">
-                <input type="password" class="form-control" name="password1" placeholder="Mật khẩu">
-              </div>
-            </div>
-
-            <div class="col-sm-12">
-              <div class="form-group has-feedback">
-                <input type="password" class="form-control" id="Confirm_password" name="password2" placeholder="Nhập lại mật khẩu">
-              </div>
-            </div>
-
-          </div>
-          <div class="form-group">
-			<button type="submit" class="buttons login_btn" name="login" value="Login">
-				Continue
-			</button>
-		</div>
-            </form>
-          <div class="form-info">
-			<p class="text-center p-b-10">By Register I agree to receive emails.</p>
-		</div>
-
-        </div>
-        <div class="register text-center">Already a member? <a href="#">Login</a></div>
-      </div>
-    </div>
-  </div>
+{#{% include 'raovat/user/dang-ki.html' %}#}
   <!-- End Header  -->
 </div>

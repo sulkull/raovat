@@ -1,0 +1,65 @@
+{% extends 'raovat/main.html' %}
+{% load static %}
+{% block main %}
+<style>
+.header {
+    position: unset;
+}
+</style>
+<div class="iner_breadcrumb p-t-20 p-b-20">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Tài khoản</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- End breadcrumb -->
+<section class="dashboard_sec m-t-10">
+    <div class="container" style="max-width: 500px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12 m-t-40">
+                        <div class="profile_detail">
+                            <h3 style="text-align: center">Đăng nhập</h3>
+                            <form action="{% url 'taikhoan:dangnhap' %}" method="POST">
+                {% csrf_token %}
+              <div class="row">
+                  {% if form.error %}
+                        <div class="alert alert-danger" style="margin: auto; margin-bottom:10px;">
+                            <strong>Tài khoản hoặc mật khẩu không đúng</strong>
+                        </div>
+                    {% endif %}
+                <div class="col-sm-12">
+                  <div class="form-group has-feedback">
+                    <input type="text" class="form-control" name="username" placeholder="Email/Username">
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="form-group has-feedback">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                  <input type="hidden" name="next" value="{% url 'taikhoan:thongtintaikhoan' %}" />
+                <button type="submit" class="buttons login_btn" name="login" value="submit">
+                    Continue
+                </button>
+              </div>
+            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-sidebar m-t-50 m-b-50">
+                    <img class="add_img img-fluid" src="/static/images/discount-img.png" alt="Classified Plus">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

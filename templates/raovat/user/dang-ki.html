@@ -1,0 +1,68 @@
+{% extends 'raovat/main.html' %}
+{% load static %}
+{% block main %}
+<style>
+.header {
+    position: unset;
+}
+</style>
+<div class="iner_breadcrumb p-t-20 p-b-20">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Tài khoản</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Đăng kí</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- End breadcrumb -->
+<section class="dashboard_sec m-t-10">
+    <div class="container" style="max-width: 500px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12 m-t-40">
+                        <div class="profile_detail">
+                            <h3 style="text-align: center">Đăng kí</h3>
+                            <form class="form-container" method="post" action="{% url 'taikhoan:dangky' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label>username</label>
+                                    {{form.username}}
+                                    {{ form.errors.username}}
+                                </div>
+                                <div class="form-group">
+                                    <label>email</label>
+                                    {{form.email}}
+                                    {{ form.errors.email}}
+                                </div>
+                                <div class="form-group">
+                                    <label>teleplone</label>
+                                    {{form.SDT}}
+                                    {{ form.errors.SDT}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Mật khẩu</label>
+                                    {{form.password1}}
+                                    {{ form.errors.password1}}
+                                </div>
+                                <div class="form-group">
+                                    <label>Nhập lại mật khẩu</label>
+                                    {{form.password2}}
+                                    {{ form.errors.password2}}
+                                </div>
+                                <button class="update_btn mt-2 text-capitalize" type="submit" value="button">Đăng kí</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-sidebar m-t-50 m-b-50">
+                    <img class="add_img img-fluid" src="/static/images/discount-img.png" alt="Classified Plus">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

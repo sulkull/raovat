@@ -1,0 +1,79 @@
+{% extends 'raovat/user/dashboard.html' %}
+{% load static %}
+{% block page %}
+<div class="row">
+    <div class="col-md-12 m-t-40 margin_top">
+        <div class="profile_detail">
+            <h3>profile detail </h3>
+            <form action="" method="post" enctype="multipart/form-data" name="myform">
+                                    {% csrf_token %}
+                                <div class="form-group needs-validation">
+                                    <div class="custom-file">
+                                            <label class="custom-file-label" for="{{form.avatar.id_for_label}}">{{form.avatar.value }}</label>
+                                                {{form.avatar }}
+                                            {{ form.errors.avatar}}
+                                        </div>
+                                </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            {{form.firstname.label_tag}}
+                                            {{form.firstname}}
+                                            {{ form.errors.firstname}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{form.lastname.label_tag}}
+                                            {{form.lastname}}
+                                             {{ form.errors.lastname}}
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            {{form.email.label_tag}}
+                                            {{form.email}}
+                                           {{form.errors.email}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{form.sdt.label_tag}}
+                                            {{form.sdt}}
+                                            {{ form.errors.sdt}}
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            {{form.ngaysinh.label_tag}}
+                                            {{form.ngaysinh}}
+                                             {{ form.errors.ngaysinh}}
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            {{form.gioitinh.label_tag}}
+                                            {{form.gioitinh}}
+                                            {{ form.errors.gioitinh}}
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                         <div class="form-group col-md-12">
+                                            {{form.diachi.label_tag}}
+                                            {{form.diachi}}
+                                            {{ form.errors.diachi}}
+                                        </div>
+                                    </div>
+                <input type="submit" value="Cập nhật" class="btn subs_btn btn-default" style="margin-left:50px; "/>
+             </form>
+
+
+        </div>
+    </div>
+</div>
+<div class="single-sidebar m-t-50 m-b-50">
+    <img class="add_img img-fluid" src="images/discount-img.png" alt="Classified Plus">
+</div>
+  <style>
+
+        #id_diachi {
+            height:100px;
+        }
+        .errorlist li {
+            color: red;
+        }
+    </style>
+{% endblock %}

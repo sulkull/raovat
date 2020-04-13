@@ -2,16 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ac53a2-8101-4001-a60e-c0c35294d176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/raovat/user/activeemail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/raovat/user/confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/raovat/user/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/raovat/user/success.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/raovat/user/verify.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/raovat/user/dang-ki.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/raovat/user/dang-nhap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/raovat/user/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/raovat/user/doi-mk.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/raovat/user/thong-tin-tai-khoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raovat/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/raovat/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raovat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/raovat/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raovat/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/raovat/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taikhoan/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/taikhoan/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taikhoan/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/taikhoan/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taikhoan/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/taikhoan/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taikhoan/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/taikhoan/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/raovat/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/raovat/page/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/page/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/raovat/user/activeemail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/raovat/user/confirm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/raovat/user/success.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/raovat/user/verify.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,62 +47,35 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/raovat/user/doi-mk.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+              <folding>
+                <element signature="e#185#205#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/taikhoan/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="209">
+              <caret line="88" column="36" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/raovat/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="168" column="33" selection-start-line="168" selection-start-column="33" selection-end-line="168" selection-end-column="33" />
-              <folding>
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/taikhoan/tokens.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/taikhoan/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/taikhoan/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="359">
+              <caret line="115" column="46" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,16 +86,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>src=&quot;images/</find>
       <find>clos</find>
       <find>login</find>
+      <find>%}</find>
+      <find>src=&quot;images/</find>
+      <find>f.</find>
     </findStrings>
     <replaceStrings>
       <replace>&lt;img src=&quot;{% static'</replace>
@@ -120,6 +105,9 @@
       <replace>&lt;img src=&quot;{% static 'images</replace>
       <replace>png' %}&quot;</replace>
       <replace>src=&quot;{%static 'images/</replace>
+      <replace>src=&quot;/static/images/</replace>
+      <replace>form</replace>
+      <replace>form.</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -134,8 +122,6 @@
         <option value="$PROJECT_DIR$/templates/raovat/page/detail-page.html" />
         <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/home/urls.py" />
-        <option value="$PROJECT_DIR$/templates/raovat/page/category.html" />
-        <option value="$PROJECT_DIR$/raovat/utils.py" />
         <option value="$PROJECT_DIR$/thanhpho/models.py" />
         <option value="$PROJECT_DIR$/home/models.py" />
         <option value="$PROJECT_DIR$/sanpham/models.py" />
@@ -146,21 +132,28 @@
         <option value="$PROJECT_DIR$/user/models.py" />
         <option value="$PROJECT_DIR$/user/admin.py" />
         <option value="$PROJECT_DIR$/taikhoan/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/raovat/settings.py" />
         <option value="$PROJECT_DIR$/taikhoan/apps.py" />
-        <option value="$PROJECT_DIR$/taikhoan/models.py" />
         <option value="$PROJECT_DIR$/taikhoan/admin.py" />
-        <option value="$PROJECT_DIR$/taikhoan/forms.py" />
-        <option value="$PROJECT_DIR$/taikhoan/urls.py" />
-        <option value="$PROJECT_DIR$/raovat/urls.py" />
         <option value="$PROJECT_DIR$/taikhoan/tokens.py" />
         <option value="$PROJECT_DIR$/taikhoan/templates/pages/activeemail.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/error.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/confirm.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/success.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/verify.html" />
-        <option value="$PROJECT_DIR$/taikhoan/views.py" />
+        <option value="$PROJECT_DIR$/templates/raovat/page/category.html" />
+        <option value="$PROJECT_DIR$/templates/raovat/user/dang-ki.html" />
+        <option value="$PROJECT_DIR$/templates/raovat/user/dang-nhap.html" />
+        <option value="$PROJECT_DIR$/taikhoan/models.py" />
+        <option value="$PROJECT_DIR$/raovat/urls.py" />
         <option value="$PROJECT_DIR$/templates/raovat/header.html" />
+        <option value="$PROJECT_DIR$/raovat/utils.py" />
+        <option value="$PROJECT_DIR$/taikhoan/urls.py" />
+        <option value="$PROJECT_DIR$/raovat/settings.py" />
+        <option value="$PROJECT_DIR$/templates/raovat/user/thong-tin-tai-khoan.html" />
+        <option value="$PROJECT_DIR$/templates/raovat/user/dashboard.html" />
+        <option value="$PROJECT_DIR$/templates/raovat/user/doi-mk.html" />
+        <option value="$PROJECT_DIR$/taikhoan/forms.py" />
+        <option value="$PROJECT_DIR$/taikhoan/views.py" />
       </list>
     </option>
   </component>
@@ -212,6 +205,13 @@
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="raovat" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
+              <item name="raovat" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="raovat" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -234,14 +234,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\CODE_DO_AN\raovat\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat\user" />
       <recent name="F:\CODE_DO_AN\raovat" />
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat\page" />
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\CODE_DO_AN\raovat\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -296,17 +296,18 @@
       <workItem from="1586531589432" duration="1270000" />
       <workItem from="1586532898172" duration="867000" />
       <workItem from="1586638561705" duration="8188000" />
+      <workItem from="1586777686874" duration="38108000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25712000" />
+    <option name="totallyTimeSpent" value="63820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26096824" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2647504" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -335,31 +336,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/images/fb.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/logo.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/kim.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/fred.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/james.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/sarah.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/martin.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/meagan.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/john_mac.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/messages/aditya_chat.png" />
-    <entry file="file://$PROJECT_DIR$/static/images/banner2.png" />
-    <entry file="file://$PROJECT_DIR$/templates/raovat/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/page/detail-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/raovat/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -370,20 +346,6 @@
             <element signature="e#23162#26185#0#HTML" />
             <element signature="e#26227#27229#0#HTML" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raovat/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/page/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -477,30 +439,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/taikhoan/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/contrib/auth/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-553">
-          <caret line="62" column="30" selection-start-line="62" selection-start-column="30" selection-end-line="62" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -525,29 +467,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raovat/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369">
-          <caret line="42" column="15" lean-forward="true" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raovat/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/do_an_rao_vat/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/do_an_rao_vat/.gitattributes" />
+    <entry file="file://$PROJECT_DIR$/.gitattributes" />
     <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/activeemail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -575,10 +496,54 @@
     <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/success.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/user/error.html">
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/contrib/auth/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="-5214">
+          <caret line="39" column="6" selection-start-line="39" selection-start-column="6" selection-end-line="39" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/page/detail-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" lean-forward="true" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/page/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/dangky.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="143" column="47" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="47" />
+          <folding>
+            <element signature="e#2982#3020#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/tokens.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="57" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -591,57 +556,164 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/raovat/user/verify.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        <state relative-caret-position="289">
+          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/tokens.py">
+    <entry file="file://$PROJECT_DIR$/templates/raovat/user/dang-nhap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/urls.py">
+    <entry file="file://$PROJECT_DIR$/templates/raovat/user/dang-ki.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+          <caret line="15" column="11" lean-forward="true" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/raovat/user/error.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raovat/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#630#662#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/raovat/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="168" column="33" selection-start-line="168" selection-start-column="33" selection-end-line="168" selection-end-column="33" />
+        <state relative-caret-position="209">
+          <caret line="68" column="101" selection-start-line="68" selection-start-column="101" selection-end-line="68" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raovat/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="54" column="52" selection-start-line="54" selection-start-column="43" selection-end-line="54" selection-end-column="52" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/forms/fields.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="214" selection-start-line="214" selection-end-line="214" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/media/avatar/2020/04/14/Picture1_DTmelGy.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/media/avatar/2020/04/14/Picture1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/thongtintaikhoan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
+          <folding>
+            <element signature="e#4519#4570#0#HTML" expanded="true" />
+            <element signature="e#4711#4737#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raovat/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="127" column="23" selection-start-line="127" selection-start-column="23" selection-end-line="127" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/doimatkhau.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="59" column="38" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="38" />
+          <folding>
+            <element signature="e#1889#1914#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/user/thong-tin-tai-khoan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="74" column="23" lean-forward="true" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
+          <folding>
+            <element signature="e#100#3675#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/user/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/user/doi-mk.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="e#185#205#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="88" column="36" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/taikhoan/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="115" column="46" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
