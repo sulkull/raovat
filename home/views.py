@@ -5,3 +5,5 @@ def index(request):
     return render(request, "raovat/index.html")
 def category(request):
     return render(request, "raovat/page/category.html")
+def Error404(request):
+    return render(request, "raovat/404.html")

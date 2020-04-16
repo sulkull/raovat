@@ -5,7 +5,18 @@ from sanpham.views import *
 
 app_name = 'sanpham'
 urlpatterns = [
-    path("dang-bai-viet", post, name='Dang-bai-viet'),
+
+    # quan ly bai viet
+    path("quan-ly/dang-bai-viet", post, name='Dang-bai-viet'),
+    path("quan-ly/danh-sach-bai", danh_sach_bai, name='Danh-sach-bai'),
+    path('quan-ly/sua-bai/<int:id>', post_edit, name='Sua-bai-viet'),
+    path('quan-ly/delete/<int:id>', XoaPost.as_view(), name='Xoa-bai-viet'),
+
+    # trang thai
+    path('active/<int:id>', trang_thai_bat, name='Trang-thai-post_active'),
+    path('hidden/<int:id>', trang_thai_tat, name='Trang-thai-post_hidden'),
+
+
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

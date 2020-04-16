@@ -75,7 +75,7 @@
               {% endif %}
               <ul class="ml-auto post_ad">
                   {% if user.is_authenticated %}
-              <li class="nav-item search"><a class="nav-link" href="#">Đăng Bán</a></li>
+              <li class="nav-item search"><a class="nav-link" href="{% url 'sanpham:Dang-bai-viet' %}">Đăng Bán</a></li>
                       {% else %}
                <li class="nav-item search"><a class="nav-link" href="#"data-toggle="modal" data-target="#login">Đăng Bán</a></li>
                   {% endif %}
@@ -144,6 +144,6 @@
     </div>
   </div>
     <!-- Modal dang ki-->
-{#{% include 'raovat/user/dang-ki.html' %}#}
+{#{% include 'raovat/user/404.html' %}#}
   <!-- End Header  -->
 </div>

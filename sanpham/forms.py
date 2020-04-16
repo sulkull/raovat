@@ -8,7 +8,7 @@ from sanpham.models import *
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title','category','subcategory','gia','thanhphos','quan_huyen','diachi','mota','action')
+        fields = ('title','category','subcategory','gia','thanhphos','quan_huyen','diachi','mota')
         exclude = ('user', 'ngaytao', 'slug','action')
         labels = {
             'title': gettext('Tiêu đề'),
@@ -38,9 +38,24 @@ class PostForm(forms.ModelForm):
                 'placeholder': '--------',
                 'required': False
             }),
+            'thanhphos': forms.Select(attrs={
+                'class': 'form-control',
+                'onchange': 'makecity(this.value)',
+                'required': False
+            }),
+            'quan_huyen': forms.Select(attrs={
+                'class': 'form-control',
+                'placeholder': '--------',
+                'required': False
+            }),
             'gia': forms.NumberInput(attrs={
                 'class': 'form-control',
                 'placeholder': 'Nhập giá bán 10000,200000',
+                'required': False
+            }),
+            'diachi': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Nhập địa chỉ',
                 'required': False
             }),
         }
@@ -63,8 +78,9 @@ class PostForm(forms.ModelForm):
 
 
 class ImageForm(forms.ModelForm):
-    image = forms.ImageField(label='Image')
+    image = forms.ImageField(label='')
 
     class Meta:
         model = Images
+        fields =['image']
         exclude = ('post',)

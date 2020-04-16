@@ -3149,20 +3149,20 @@ border: 0;
 	transition:all 1s ease;
 	border-bottom: 0;
 	font-size: 15px;
-	padding: 0 11px;
+	padding: 0px;
 	line-height: 10px;
-	height: 25px;
-	width: 67px;
+	height: 30px;
+	width: 70px;
 }
 .dashboard_main td .active_btn {
 	background: #00a651;
 	color: #fff;
 	transition: all 1s ease;
-	font-size: 15px;
-	padding: 0 11px;
+	font-size: 13px;
+	padding: 0px;
 	line-height: 10px;
-	height: 25px;
-	width: 67px;
+	height: 30px;
+	width: 70px;
 }
 .dashboard_main td:hover .active_btn {
 	opacity:0.8;
