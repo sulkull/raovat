@@ -13,7 +13,8 @@ admin.site.register(thanhpho, ThanhphoAdmin)
 
 class QuanhuyenAdmin(admin.ModelAdmin):
     list_display = ['title','slug','id']
-    list_filter = ['title']
+    list_filter = ['thanhphos','title',]
+    search_fields = ['title',]
     exclude = ['slug']
     list_per_page = 10
 admin.site.register(quan_huyen, QuanhuyenAdmin)

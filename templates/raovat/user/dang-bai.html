@@ -1,0 +1,199 @@
+{% extends 'raovat/user/dashboard.html' %}
+{% load static %}
+{% block page %}
+    <style>.django-ckeditor-widget {display: flex;}</style>
+<div class="dashboard_profile_main">
+    <div class="dashboard_heding">
+        <h3> Đăng bài viết </h3>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-7">
+        <div class="profile_detail">
+            <h3>Thông tin </h3>
+            <form id="dang-bai" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ hinh.media }}
+                    {{ f.media }}
+                <div class="form-group">
+                    <label>{{ f.title.label }}</label>
+                    {{ f.title }}
+                </div>
+                <body onload="resetSelection()">
+                <div class="form-group selectdiv">
+                    <label>{{ f.category.label }}</label>
+                    {{ f.category }}
+                </div>
+                <div class="form-group selectdiv">
+                    <label>{{ f.subcategory.label }}</label>
+                    {{ f.subcategory }}
+                </div>
+                </body>
+                <div class="form-group">
+                    <label>{{ f.gia.label }}</label>
+                    {{ f.gia }}
+                </div>
+
+                <div class="img_browse">
+                    <label>Thêm hình ảnh</label>
+                    <div class="form-group">
+                        <div class="tg-fileuploadlabel">
+{#                            <button class="form-control-file text-capitalize" type="submit" value="button">Select Files</button>#}
+                            {{ hinh.as_p }}
+                            <span>Upload tối đa 3 hình ảnh: 500 KB</span> </div>
+                    </div>
+                </div>
+
+                <div class="ad_description">
+                    <label>Mô tả</label>
+                    <div class="form-group">
+                        <div class="ad_description_type">
+                            <div class="note-editor">
+                                {{ f.mota }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="price_premium">
+                    <div class="price_parts mt-4">
+                        <label>prices</label>
+                        <div class="form-group">
+                            <div class="price_box">
+                                <table class="table table-xl mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td class="border-top-0 pr-0">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="">
+                                                </div>
+                                            </td>
+                                            <td class="text-white border-top-0 text-left"><span class="premium"><i class="fa fa-star"></i> <span class="vhb">Premium<span></span></span>
+                                                </span>
+                                            </td>
+                                            <td class="border-top-0 Price">Price</td>
+                                            <td class="border-top-0"><strong>$20</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-top-0">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="">
+                                                </div>
+                                            </td>
+                                            <td class="border-top-0 text-left"><span class="sponsored_btn">Sponsored</span>
+                                            </td>
+                                            <td class="border-top-0 Price">Price</td>
+                                            <td class="border-top-0"><strong>$20</strong>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="border-top-0">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" value="">
+                                                </div>
+                                            </td>
+                                            <td class="border-top-0 text-left"><span class="featured_btn"><i class="fa fa-star-o"></i> Featured</span>
+                                            </td>
+                                            <td class="border-top-0 Price">Price</td>
+                                            <td class="border-top-0"><strong>$25</strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="change_password">
+            <h3> Hinh anh</h3>
+            <form>
+                <div class="form-group">
+                    <label>first name *</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>last name *</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>phone</label>
+                    <input type="tel" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>enter address</label>
+                    <input type="tel" class="form-control">
+                </div>
+                <div class="form-group selectdiv">
+                    <label>Country</label>
+                    <select class="form-control">
+                        <option>Select a Country</option>
+                        <option>india</option>
+                        <option>Russia</option>
+                        <option>Canada</option>
+                        <option>China</option>
+                    </select>
+                </div>
+                <div class="form-group selectdiv">
+                    <label>state</label>
+                    <select class="form-control">
+                        <option>Select a state</option>
+                        <option>rajasthan</option>
+                        <option>U P</option>
+                        <option>M P</option>
+                        <option>goa</option>
+                    </select>
+                </div>
+                <div class="form-group selectdiv">
+                    <label>city</label>
+                    <select class="form-control">
+                        <option>Select a city</option>
+                        <option>jaipur</option>
+                        <option>alwar</option>
+                        <option>bara</option>
+                        <option>kota</option>
+                    </select>
+                </div>
+                <button class="change_btn mt-2 text-capitalize" type="submit" value="button">ad post</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+        var subcategory = {
+        {% for b in cate  %}
+        {{ b.id }} : [{% for s in b.subcategory.all %}"{{ s.id }}\">{{ s.title }}",{% endfor %}],
+        {% endfor %}
+        }
+
+        function makeSubmenu(value) {
+            if (value.length == 0) document.getElementById("id_subcategory").innerHTML = "<option></option>";
+            else {
+                var citiesOptions = "";
+                for (categoryId in subcategory[value]) {
+                    citiesOptions += "<option value=\"" + subcategory[value][categoryId] + "</option>";
+                }
+                document.getElementById("id_subcategory").innerHTML = citiesOptions;
+            }
+        }
+
+        function displaySelected() {
+            var country = document.getElementById("id_category").value;
+            var city = document.getElementById("id_subcategory").value;
+            alert(country + "\n" + city);
+        }
+
+        function resetSelection() {
+            document.getElementById("id_category").selectedIndex = 0;
+            document.getElementById("id_subcategory").selectedIndex = 0;
+        }
+
+</script>
+
+{% endblock %}

@@ -41,7 +41,27 @@ INSTALLED_APPS = [
     'thanhpho',
     'sanpham',
     'taikhoan',
+
+    #plugin
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+# Custom lại trình soạn thảo
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'height': 200,
+        'width':'100%',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'], ['Source'],
+        ],
+    },
+}
+CKEDITOR_UPLOAD_PATH = 'd-uploads/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,9 +91,6 @@ TEMPLATES = [
         },
     },
 ]
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 WSGI_APPLICATION = 'raovat.wsgi.application'
 
@@ -124,9 +141,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATIC_URL = '/static/'
-
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ALL ='/media/'
 MEDIA_URL ='/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

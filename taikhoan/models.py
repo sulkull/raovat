@@ -18,3 +18,20 @@ class Profile(AbstractUser):
     class Meta:
         verbose_name_plural = 'Tài khoản'
 
+class package(models.Model):
+    ten_goi_vip = models.CharField(max_length=100,null=False,verbose_name='Tên gói vip',unique=True)
+    def __str__(self):
+        return self.ten_goi_vip
+    class Meta:
+            verbose_name_plural = 'Gói vip'
+
+
+class Vip(models.Model):
+    taikhoan = models.OneToOneField(Profile,on_delete=models.CASCADE,null=False)
+    package = models.OneToOneField(package,on_delete=models.CASCADE,null=False,verbose_name='Chọn gói vip')
+    ngaytao = models.DateTimeField(auto_now_add=True,auto_created=True,verbose_name='Ngày tạo')
+    thoigian = models.DateTimeField(auto_now=False,auto_now_add=False,null=True,blank=True,verbose_name ='Chọn thời gian kết thúc')
+    kiemtra = models.BooleanField(default=False,verbose_name='Trạng thái')
+
+    class Meta:
+        verbose_name_plural = 'Đăng kí Vip'
