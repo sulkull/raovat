@@ -1,0 +1,173 @@
+{% extends 'raovat/main.html' %}
+{% load static %}
+{% load humanize %}
+{% block main %}
+<style xmlns="http://www.w3.org/1999/html">.header {position: unset;}</style>
+<!-- breadcrumb -->
+<div class="iner_breadcrumb p-t-20 p-b-20">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">{{ cate.title }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- End breadcrumb -->
+<section class="top_listings">
+  <div class="container">
+    <!-- Row  -->
+    <div class="row justify-content-center">
+      <div class="col-md-7 text-center">
+        <h2 class="title">Xem các tin đăng {{ cate.title }} </h2>
+        <h6 class="subtitle">Tìm kiếm các tin đăng {{ cate.title }} nhanh nhất.</h6>
+      </div>
+    </div>
+    <!-- Row  -->
+
+
+    <div class="row m-t-40 margin_top">
+       <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="sidebar-wrapper">
+              <div class="single-sidebar">
+                <form class="search-form" action="#">
+                  <input placeholder="Keywords" type="text">
+                  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+              </div>
+              <div class="single-sidebar">
+                <div class="sec-title">
+                  <h3 class="all-categories">Danh mục</h3>
+                  <ul class="categories clearfix slide" style="">
+                      {% for c in danhmuc %}
+                    <li><a href="{% url 'sanpham:Xem-danh-muc' c.slug %}">{{ c.title }}({{ c.post_set.count }})</a></li>
+                      {% endfor %}
+                  </ul>
+                </div>
+              </div>
+                <div class="single-sidebar">
+                    <div class="sec-title">
+                      <h3 class="condition mb-2">Thành phố</h3>
+                      <ul class="categories clearfix condition-slide" style="">
+                          {% for c in tp %}
+                        <li><a href="#">{{ c.title }}({{ c.post_set.count}})</a></li>
+                          {% endfor %}
+                      </ul>
+                    </div>
+                </div>
+            </div>
+                        <div class="single-sidebar mt-4">
+                  <img class="add_img img-fluid" src="/static/images/google_adds1.png" alt="Classified Plus">
+                </div>
+          </div>
+       <div class="col-md-9 col-sm-12 col-xs-12">
+            <div class="row">
+     <div class="col-md-12 col-sm-12 col-xs-12 m-b-10">
+            <div class="listing-select-parts d-flex justify-content-between">
+              <div class="listing-select-head-left d-inline-block">
+                <h3> Có {{ post.count }} tin đăng {{ cate.title }} </h3>
+              </div>
+              <div class="listing-select-head-right d-inline-block ">
+                <p class="d-inline-block px-3"> View </p>
+                <span class="d-inline-block bars px-2"><a href="#"><i class="fa fa-list"></i></a></span>
+                <span class="d-inline-block bars px-2"><a class="active" href="#"><i class="fa fa-th"></i></a></span>
+                <div class="sort_by d-inline-block pl-3">
+
+                </div> </div>
+                </div>
+          </div>
+         {% for p in phantrang %}
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+            <div class="featured-parts rounded m-t-30">
+              <div class="featured-img">
+                  <a href="{% url 'sanpham:Chi-tiet-bai' p.slug %}">
+                      <img class="img-fluid rounded-top" src="{% for h in p.images_set.all|slice:"1" %}{{ h.image.url }}{% endfor %}" alt="{{ p.title }}"  style="height: 150px;">
+                  </a>
+    {#            <div class="featured-new bg_warning1"> <a href="#"> Mới </a> </div>#}
+              </div>
+              <div class="featured-text">
+                <div class="text-top d-flex justify-content-between ">
+                  <div class="heading"> <a href="{% url 'sanpham:Chi-tiet-bai' p.slug %}">{{ p.title }}</a> </div>
+                  <div class="book-mark"><a href="#"><i class="fa fa-bookmark"></i></a></div>
+                </div>
+                <div class="text-stars m-t-5">
+                  <p>{{ p.gia|intcomma }} vnđ</p>
+                  <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
+                <div class="featured-bottum m-t-30">
+                  <ul class="d-flex justify-content-between list-unstyled m-b-20">
+                    <li><a href="https://www.google.com/maps/place/{{p.diachi }},{{ p.quan_huyen }},{{p.thanhphos }}"target="_blank"><i class="fa fa-map-marker"></i>  {{ p.quan_huyen }}-{{p.thanhphos }}</a></li>
+                    <li><a href="#"><i class="fa fa-heart-o"></i> Lưu tin</a> </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+         {% endfor %}
+            <div class="clearfix"></div>
+            <div class="col-md-12">
+                  <!-------phan trang---->
+                      <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center m-t-20 m-b-50">
+                                 {% if phantrang.has_previous %}
+                                <li class="page-item"><a class="page-link" href="?page={{ phantrang.previous_page_number }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                     {% else %}
+                                <li class="page-item"><a class="page-link" href="?"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                                {% endif %}
+                            {% for page in phantrang.paginator.page_range %}
+                                {% if phantrang.number == page %}
+                                    <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}</a></li>
+                                {% else %}
+                                    <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if phantrang.has_next %}
+                                <li class="page-item"><a class="page-link" href="?page={{phantrang.next_page_number}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                                {% else %}
+                                <li class="page-item"><a class="page-link" href="?"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+                            {% endif %}
+                            </ul>
+                    </nav>
+                   <div class="single-sidebar">
+                      <img class="add_img img-fluid" src="/static/images/discount-img.png" alt="Classified Plus">
+                    </div>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block style %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    $(".all-categories").on('click', function(e){
+        $(".slide").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $(".condition").on('click', function(e){
+        $(".condition-slide").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $(".post-by").on('click', function(e){
+        $(".post-slide").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $(".price_r").on('click', function(e){
+        $(".price-range-block").slideToggle("slow");
+    });
+});
+</script>
+<script src="/static/js/price_range_script.js"></script>
+<script src="/static/js/jquery-ui.js"></script>
+        {% endblock %}

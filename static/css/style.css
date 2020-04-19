@@ -2599,18 +2599,26 @@ border: 0;
 	color: #3a3a3a;
 	font-weight: 500;
 }
-.detail_btn .btn_chat {
-	max-width: 200px;
-	background: #00a651;
-	font-size: 19px;
-	text-transform: capitalize;
-	cursor: pointer;
-	font-weight: 500;
-	border-radius: 4px;
-	transition: all 0.3s ease;
-}
 .detail_btn .btn_chat:hover {
-	opacity: 0.8;
+    opacity: 0.8;
+}
+
+.detail_btn .btn_chat {
+    max-width: 200px;
+    background: #00a651;
+    font-size: 19px;
+    text-transform: capitalize;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+	text-align: center;
+}
+.detail_btn>a>button{
+	background: none;
+	border: none;
+	color: white;
+	cursor: pointer;
 }
 .detail_prize {
 	font-size: 16px;
@@ -4886,3 +4894,25 @@ button.view-btn {
     display: block !important;
 }
  }
+    #gal1sss img {
+                    cursor: pointer;
+                    width: 100px;
+                    height: 70px;
+                    object-fit: cover;
+                    border: 1px solid #ededed;
+                            }
+                div#gal1sss {
+                    display: inline-block;
+                }
+     .big-imgsss {
+    position: relative;
+    width: 100%;
+    max-height: 400px;
+    margin-bottom: 5px;
+}.big-imgsss img {
+    border: 1px solid #ededed;
+    padding: 1px;
+    width: 100%!important;
+    height: 300px!important;
+    margin-bottom: 5px;
+}

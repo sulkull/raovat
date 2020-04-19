@@ -28,6 +28,8 @@ class category(models.Model):
     title = models.CharField(max_length=100, null=False, unique=True)
     slug = models.SlugField(max_length=255)
     subcategory = models.ManyToManyField(subcategory, verbose_name='Chọn danh mục')
+    icon = models.ImageField(upload_to='icon/',verbose_name='Icon',default='icon/Real-Estate.png')
+    action = models.BooleanField(default=False,verbose_name='Hiện thị ngoài trang chủ')
 
     def __str__(self):
         return self.title

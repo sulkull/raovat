@@ -59,7 +59,7 @@
             </li>
           </ul>
           <div class="header_r d-flex">
-              {% if user.is_authenticated %}
+              {% if request.user.is_authenticated %}
                    <div class="loin"> <a class="nav-link dropdown-toggle"
                                          href="#" data-toggle="dropdown"
                                          aria-haspopup="true"
@@ -74,7 +74,7 @@
                   <div class="loin"> <a class="nav-link" href="#" data-toggle="modal" data-target="#login"><i class="fa fa-user m-r-5"></i>Register/Sign In</a>  </div>
               {% endif %}
               <ul class="ml-auto post_ad">
-                  {% if user.is_authenticated %}
+                  {% if request.user.is_authenticated %}
               <li class="nav-item search"><a class="nav-link" href="{% url 'sanpham:Dang-bai-viet' %}">Đăng Bán</a></li>
                       {% else %}
                <li class="nav-item search"><a class="nav-link" href="#"data-toggle="modal" data-target="#login">Đăng Bán</a></li>

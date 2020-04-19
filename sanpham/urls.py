@@ -12,6 +12,10 @@ urlpatterns = [
     path('quan-ly/sua-bai/<int:id>', post_edit, name='Sua-bai-viet'),
     path('quan-ly/delete/<int:id>', XoaPost.as_view(), name='Xoa-bai-viet'),
 
+    #Hien thi bai viet - danh muc
+    path('tin-dang/<str:slug>', XemPost, name='Chi-tiet-bai'),
+    path('<str:slug>', XemCategory, name='Xem-danh-muc'),
+
     # trang thai
     path('active/<int:id>', trang_thai_bat, name='Trang-thai-post_active'),
     path('hidden/<int:id>', trang_thai_tat, name='Trang-thai-post_hidden'),

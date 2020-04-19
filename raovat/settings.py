@@ -55,8 +55,11 @@ CKEDITOR_CONFIGS = {
         'width':'100%',
         'toolbar_Custom': [
             ['Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
             ['Link', 'Unlink', 'Anchor'],
             ['Image'],
+            ['Styles', 'Format', 'Font', 'FontSize'],
+            ['NumberedList', 'BulletedList'],
             ['TextColor', 'BGColor'],
             ['Smiley', 'SpecialChar'], ['Source'],
         ],

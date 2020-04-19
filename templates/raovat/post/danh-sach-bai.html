@@ -9,15 +9,11 @@
     <div class="row">
         <div class=" col-md-12 all_ads">
             <ul class="list-unstyled m-0">
-                <li class="my_ad m-b-15"><a href="#"> All(42) </a>
+                <li class="my_ad m-b-15"><a href="#"> Tất cả {{ post.count }} </a>
                 </li>
-                <li class="my_ad m-b-15"><a href="#"> Published (88) </a>
+                <li class="my_ad m-b-15"><a href="#"> Đang bán {{ pub.count }} </a>
                 </li>
-                <li class="my_ad m-b-15"><a href="#"> Featured (12) </a>
-                </li>
-                <li class="my_ad m-b-15"><a href="#"> Sold (02) </a>
-                </li>
-                <li class="my_ad m-b-15"><a href="#"> Active (42) </a>
+                <li class="my_ad m-b-15"><a href="#"> Đã bán - Ẩn {{ hiden.count }}</a>
                 </li>
                 <li class="my_ad m-b-15"><a href="#"> Expired (01) </a>
                 </li>
@@ -41,7 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    {% for p in post %}
+                    {% for p in phantrang %}
                         <tr>
                             <td class="text-truncate">
                                 <div class="form-check">
@@ -72,7 +68,7 @@
                                     </a>
                                 {% else %}
                                     <a href="{% url 'sanpham:Trang-thai-post_active' p.id %}">
-                                        <button type="submit" value="butten"><i class="fa fa-eye"></i></button>
+                                        <button type="submit" value="butten"><i class="fa fa-eye-slash"></i></button>
                                     </a>
                                 {% endif %}
                                 <span>
@@ -96,18 +92,23 @@
 </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center m-t-20 m-b-50">
-        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">4</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-        </li>
+         {% if phantrang.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page={{ phantrang.previous_page_number }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+             {% else %}
+        <li class="page-item"><a class="page-link" href="?"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+        {% endif %}
+    {% for page in phantrang.paginator.page_range %}
+        {% if phantrang.number == page %}
+            <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}</a></li>
+        {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{page}}">{{ page }}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if phantrang.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{phantrang.next_page_number}}"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+        {% else %}
+        <li class="page-item"><a class="page-link" href="?"><i class="fa fa-angle-right" aria-hidden="true"></i></a></li>
+    {% endif %}
     </ul>
 </nav>
 <div class="single-sidebar m-b-50"> <img class="add_img img-fluid" src="images/discount-img.png" alt="Classified Plus"> </div>

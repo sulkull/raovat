@@ -33,9 +33,9 @@
             <li class="{{ class.dash }}"><span><i class="fa fa-sliders"></i></span><a href="#"> Dashboard </a></li>
             <li class="{{ class.profile }}"><span><i class="fa fa-cog"></i></span><a href="{% url 'taikhoan:thongtintaikhoan' %}"> Thông tin cá nhân </a></li>
             <li class="{{ class.pass }}"><span><i class="fa fa-database"></i></span><a href="{% url 'taikhoan:doimatkhau' %}">Đổi mật khẩu </a></li>
-            <li class="{{ class.1 }}"><span><i class="fa fa-envelope"></i></span><a href="#"> Offers/Messages </a></li>
-            <li class="{{ class.2 }}"><span><i class="fa fa-shopping-cart"></i></span><a href="#"> Payments </a></li>
+            <li class="{{ class.post }}"><span><i class="fa fa-shopping-cart"></i></span><a href="{% url 'sanpham:Danh-sach-bai' %}"> Danh sách bài viết </a></li>
             <li class="{{ class.3 }}"><span><i class="fa fa-heart"></i></span><a href="#"> My Favourites </a></li>
+              <li class="{{ class.1 }}"><span><i class="fa fa-envelope"></i></span><a href="#"> Offers/Messages </a></li>
             <li class="{{ class.4 }}"><span><i class="fa fa-star"></i></span><a href="#"> Privacy Settings </a></li>
             <li class="{{ class.logouts }}"><span><i class="fa fa-sign-in"></i></span><a href="{% url 'taikhoan:dangxuat' %}"> Logout </a></li>
           </ul>

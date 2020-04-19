@@ -6,18 +6,21 @@
 <section class="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        {% for s in banner %}
+                <li data-target="#carouselExampleIndicators" data-slide-to="{{ s.thutu }}" class=""></li>
+        {% endfor %}
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active"> <img src="{% static 'images/banner.png' %}" alt="Classified Plus" class="slide-image">
+        {% for s in banner %}
+             {% if forloop.counter == 1  %}
+      <div class="carousel-item active">
+          <img src="{{ s.hinh.url }}" alt="{{ s.thutu }}" class="slide-image">
         <div class="slide-text">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h1>World's Largest Classifieds Site</h1>
-                <p>re!</p>
+                {{ s.mota|safe }}
                 <div>
                   <form class="book-now-home">
                     <div class="form-group">
@@ -56,13 +59,14 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item"> <img src="{% static 'images/banner2.png'%}" alt="Classified Plus" class="slide-image">
+            {% else %}
+      <div class="carousel-item">
+          <img src="{{ s.hinh.url }}" alt="Classified Plus" class="slide-image">
         <div class="slide-text">
           <div class="container">
             <div class="row">
               <div class="col-md-12">
-                <h1>World's Largest Classifieds Site</h1>
-                <p>Search from over 15,00,000 classifieds & Post unlimited classifieds free!</p>
+                {{ s.mota|safe }}
                 <div>
                   <form class="book-now-home">
                     <div class="form-group">
@@ -101,51 +105,8 @@
           </div>
         </div>
       </div>
-      <div class="carousel-item"> <img src="{% static 'images/banner.png' %}" alt="Classified Plus" class="slide-image">
-        <div class="slide-text">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12">
-                <h1>World's Largest Classifieds Site</h1>
-                <p>Search from over 15,00,000 classifieds & Post unlimited classifieds free!</p>
-                <div>
-                  <form class="book-now-home">
-                    <div class="form-group">
-                      <input type="email" class="form-control text-truncate" placeholder="What are you looking for">
-                    </div>
-                    <div class="form-group selectdiv">
-                      <select class="form-control text-truncate">
-                        <option>Your Location</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
-                    <div class="form-group selectdiv">
-                      <select class="form-control border-right-0 text-truncate">
-                        <option>Select Category</option>
-                        <option>Vehicles</option>
-                        <option>Electronics</option>
-                        <option>Mobiles</option>
-                        <option>Furniture</option>
-                        <option>Fashion</option>
-                        <option>Real Estate</option>
-                        <option>Animals</option>
-                        <option>Education</option>
-                        <option>Baby products</option>
-                        <option>Services</option>
-                        <option>Furniture</option>
-                      </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary booknow btn-skin">Search Now</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+            {% endif %}
+         {% endfor %}
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
 </section>
@@ -165,36 +126,12 @@
     <div class="row">
       <div class="col-md-12">
         <ul class="list-unstyled text-center p-t-30">
-          <li><a href="#"><img src="{% static 'images/Vehicles.png'%}" alt="Classified Plus"/>
-            <p> Vehicles </p>
+            {% for d in danhmuc %}
+          <li><a href="{% url 'sanpham:Xem-danh-muc' d.slug %}"><img src="{{ d.icon.url }}" alt="{{ d.title }} "/>
+            <p> {{ d.title }} </p>
             </a> </li>
-          <li><a href="#"><img src="{% static 'images/Electronics.png'%}" alt="Classified Plus"/>
-            <p> Electronics </p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Mobiles.png'%}" alt="Classified Plus"/>
-            <p>Mobiles </p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Furniture.png'%}" alt="Classified Plus"/>
-            <p> Furniture</p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Fashion.png'%}" alt="Classified Plus"/>
-            <p> Fashion </p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Real-Estate.png'%}" alt="Classified Plus"/>
-            <p> Real Estate </p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Animals.png'%}" alt="Classified Plus/">
-            <p> Animals </p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Education.png'%}" alt="Classified Plus"/>
-            <p>Education </p>
-            </a> </li>
-          <li><a href="#"><img src="{% static 'images/Baby-products.png'%}" alt="Classified Plus"/>
-            <p>Baby products</p>
-            </a> </li>
-          <li><a href="#"> <img src="{% static 'images/Services.png'%}" alt="Classified Plus"/>
-            <p>Services </p>
-            </a> </li>
+            {% endfor %}
+
         </ul>
       </div>
     </div>
@@ -203,106 +140,7 @@
 <!-- End Categories --> 
 
 <!-- Featured_ads -->
-<section class="featured_ads bg-light">
-  <div class="container"> 
-    <!-- Row  -->
-    <div class="row justify-content-center">
-      <div class="col-md-7 text-center">
-        <h2 class="title">Featured Ads</h2>
-        <h6 class="subtitle">Explore the greates places in the city.</h6>
-      </div>
-    </div>
-    <!-- Row  -->
-    <div class="row">
-      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-        <div class="featured-parts rounded m-t-30">
-          <div class="featured-img"> <img class="img-fluid rounded-top" src="{%static 'images/Featured-img-1.png' %}" alt="Classified Plus"/>
-            <div class="featured-new"> <a href="#"> New </a> </div>
-          </div>
-          <div class="featured-text">
-            <div class="text-top d-flex justify-content-between">
-              <div class="heading"> <a href="#">Mobile</a> </div>
-              <div class="book-mark"><a href="#"><i class="fa fa-bookmark"></i></a></div>
-            </div>
-            <div class="text-stars m-t-5">
-              <p>Smartphone for sele</p>
-              <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-            <div class="featured-bottum m-t-30">
-              <ul class="d-flex justify-content-between list-unstyled m-b-20">
-                <li><a href="#"><i class="fa fa-map-marker"></i> East 7th street 98 </a></li>
-                <li><a href="#"><i class="fa fa-heart-o"></i> Save</a> </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-        <div class="featured-parts rounded m-t-30">
-          <div class="featured-img"> <img class="img-fluid rounded-top" src="{%static 'images/Featured-img-2.png' %}" alt="Classified Plus"/> </div>
-          <div class="featured-text">
-            <div class="text-top d-flex justify-content-between">
-              <div class="heading"> <a href="#">Fashion</a> </div>
-              <div class="book-mark"><a href="#"><i class="fa fa-bookmark-o"></i></a></div>
-            </div>
-            <div class="text-stars m-t-5">
-              <p>Cloth for sele</p>
-              <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-            <div class="featured-bottum m-t-30">
-              <ul class="d-flex justify-content-between list-unstyled m-b-20">
-                <li><a href="#"><i class="fa fa-map-marker"></i> East 7th street 98 </a></li>
-                <li><a href="#"><i class="fa fa-heart-o"></i> Save</a> </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-        <div class="featured-parts rounded m-t-30">
-          <div class="featured-img"> <img class="img-fluid rounded-top" src="{%static 'images/Featured-img-3.png' %}" alt="Classified Plus"/>
-            <div class="discount"> <a href="#"> Discount 30% </a> </div>
-            <div class="featured-price"> <a href="#"> $550.00 </a> </div>
-          </div>
-          <div class="featured-text">
-            <div class="text-top d-flex justify-content-between ">
-              <div class="heading"> <a href="#">Matrimony</a> </div>
-              <div class="book-mark"><a href="#"><i class="fa fa-bookmark"></i></a></div>
-            </div>
-            <div class="text-stars m-t-5">
-              <p>jewellery for sele</p>
-              <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-            <div class="featured-bottum m-t-30">
-              <ul class="d-flex justify-content-between list-unstyled m-b-20">
-                <li><a href="#"><i class="fa fa-map-marker"></i> East 7th street 98 </a></li>
-                <li><a href="#"><i class="fa fa-heart-o"></i> Save</a> </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-        <div class="featured-parts rounded m-t-30">
-          <div class="featured-img"> <img class="img-fluid rounded-top" src="{%static 'images/Featured-img-4.png' %}" alt="Classified Plus"/> </div>
-          <div class="featured-text">
-            <div class="text-top d-flex justify-content-between">
-              <div class="heading"> <a href="#">Animals</a> </div>
-              <div class="book-mark"><a href="#"><i class="fa fa-bookmark"></i></a></div>
-            </div>
-            <div class="text-stars m-t-5">
-              <p>Greyhounds Dogs for sales</p>
-              <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-            <div class="featured-bottum m-t-30">
-              <ul class="d-flex justify-content-between list-unstyled m-b-20">
-                <li><a href="#"><i class="fa fa-map-marker"></i> East 7th street 98 </a></li>
-                <li><a href="#"><i class="fa fa-heart-o"></i> Save</a> </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="view-btn hvr-pulse-grow" type="submit" value="button">View all</button>
-    </div>
-  </div>
-</section>
+{% include 'raovat/page/list-bai-viet.html' %}
 <!-- End Featured_ads --> 
 
 <!-- Trending_ads -->
@@ -447,20 +285,20 @@
     <div class="row">
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="trusted_parts text-center">
-          <h3> 1238+ </h3>
-          <p class="p-t-20">Completed Project</p>
+          <h3> {{ post.count }}0+ </h3>
+          <p class="p-t-20">Bài viết</p>
         </div>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="trusted_parts text-center mr-auto">
-          <h3> 1238+ </h3>
-          <p class="p-t-20">Happy Client</p>
+          <h3> {{ user.count }}0+ </h3>
+          <p class="p-t-20">Người dùng</p>
         </div>
       </div>
       <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
         <div class="trusted_parts text-center mr-auto">
-          <h3>1238+ </h3>
-          <p class="p-t-20">Award Winner</p>
+          <h3>{{ cate.count }}0+ </h3>
+          <p class="p-t-20">Danh mục </p>
         </div>
       </div>
     </div>
@@ -573,89 +411,24 @@
     </div>
     <div class="col-xs-12 m-t-40">
       <ul class="thumbnails owl-carousel owl-theme owl-loaded owl-drag list-unstyled" id="slider_one">
-<li>
-                  <div class="testimonials-parts"> <img src="{% static 'images/John-Peter.png' %}" alt="Classified Plus"/>
+        {% for y in ykien %}
+          <li>
+                  <div class="testimonials-parts"> <img src="{{ y.hinh.url }}" alt="Classified Plus"/>
                     <div class="testimonials-text">
-                      <h3 class="w-25 p-b-10 m-b-10"> John Peter </h3>
-                      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
+                      <h3 class="w-25 p-b-10 m-b-10"> {{ y.name }} </h3>
+                      {{ y.mota|safe }}
                       <div class="soical-icon ">
                         <ul class="list-unstyled d-flex m-t-20">
-                          <li class="border mr-1"><a href="#"><i class="fa fa-facebook-f"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                          <li class="active border"><a href="#"><i class="fa fa-linkedin"></i> </a></li>
+                          <li class="border mr-1"><a href="{{ y.fb }}" target="_blank"><i class="fa fa-facebook-f"></i> </a></li>
+                          <li class="border mr-1"><a href="{{ y.tw }}"target="_blank"><i class="fa fa-twitter"></i> </a></li>
+                          <li class="border mr-1"><a href="mailto:{{ y.email }}"target="_blank"><i class="fa fa-google-plus"></i> </a></li>
+                          <li class="active border"><a href="{{ y.linkedin }}"target="_blank"><i class="fa fa-linkedin"></i> </a></li>
                         </ul>
                       </div>
                     </div>
                   </div>
 </li>
-<li>
-
-                  <div class="testimonials-parts"> <img src="{% static 'images/Williams-Sherry.png' %}" alt="Classified Plus"/>
-                    <div class="testimonials-text">
-                      <h3 class="w-25 p-b-10 m-b-10"> John Peter </h3>
-                      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                      <div class="soical-icon ">
-                        <ul class="list-unstyled d-flex m-t-20">
-                          <li class="border mr-1"><a href="#"><i class="fa fa-facebook-f"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                          <li class="active border"><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  </li>
-<li>
-
-                  <div class="testimonials-parts"> <img src="{% static 'images/John-Peter.png' %}" alt="Classified Plus"/>
-                    <div class="testimonials-text">
-                      <h3 class="w-25 p-b-10 m-b-10"> John Peter </h3>
-                      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                      <div class="soical-icon ">
-                        <ul class="list-unstyled d-flex m-t-20">
-                          <li class="border mr-1"><a href="#"><i class="fa fa-facebook-f"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                          <li class="active border"><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  </li>
-<li>
-
-                  <div class="testimonials-parts"> <img src="{% static 'images/Williams-Sherry.png' %}" alt="Classified Plus"/>
-                    <div class="testimonials-text">
-                      <h3 class="w-25 p-b-10 m-b-10"> John Peter </h3>
-                      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                      <div class="soical-icon ">
-                        <ul class="list-unstyled d-flex m-t-20">
-                          <li class="border mr-1"><a href="#"><i class="fa fa-facebook-f"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                          <li class="active border"><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                  </li>
-<li>
-                  <div class="testimonials-parts"> <img src="{% static 'images/John-Peter.png' %}" alt="Classified Plus"/>
-                    <div class="testimonials-text">
-                      <h3 class="w-25 p-b-10 m-b-10"> John Peter </h3>
-                      <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
-                      <div class="soical-icon ">
-                        <ul class="list-unstyled d-flex m-t-20">
-                          <li class="border mr-1"><a href="#"><i class="fa fa-facebook-f"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-twitter"></i> </a></li>
-                          <li class="border mr-1"><a href="#"><i class="fa fa-google-plus"></i> </a></li>
-                          <li class="active border"><a href="#"><i class="fa fa-linkedin"></i> </a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-</li>
+          {% endfor %}
 
         
       </ul>
@@ -664,6 +437,33 @@
     </div>
   </div>
 </section>
-<!-- End Testimonial --> 
+<!-- End Testimonial -->
+{% endblock %}
 
+
+{% block style %}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        size_li = $(".col-xl-3.col-lg-3.col-md-6.col-sm-6").size();
+        x = 8;
+        hiddenBtn = document.querySelector('#showLess');
+        hiddenBtn.style.display = 'none';
+        $('.col-xl-3.col-lg-3.col-md-6.col-sm-6:lt(' + x + ')').show();
+        $('#loadMore').click(function() {
+            x = (x + 8 <= size_li) ? x + 8 : size_li;
+            $('.col-xl-3.col-lg-3.col-md-6.col-sm-6:lt(' + x + ')').show();
+            hiddenBtn.style.display = 'block';
+        });
+        $('#showLess').click(function() {
+            x = (x - 4 < 0) ? 4 : x - 4;
+            $('.col-xl-3.col-lg-3.col-md-6.col-sm-6').not(':lt(' + x + ')').hide();
+            if (x <= 4) {
+                hiddenBtn.style.display = 'none';
+            } else {
+                hiddenBtn.style.display = 'block';
+            }
+        });
+    });
+</script>
 {% endblock %}
