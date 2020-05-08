@@ -7,6 +7,7 @@ from django.urls import reverse_lazy
 from home.models import Slider, thutu, Ykienkhach
 from sanpham.models import Post, subcategory, category
 from taikhoan.models import Profile
+from thanhpho.models import thanhpho
 
 
 def index(request):
@@ -15,6 +16,7 @@ def index(request):
     danhmuc = category.objects.filter(action=True)
     banner = Slider.objects.filter(action=True).order_by(Lower('thutu').asc())
     ykien = Ykienkhach.objects.filter(action=True)
+    tp = thanhpho.objects.all()
     try:
         post = Post.objects.all()
     except Post.DoesNotExist:
@@ -26,6 +28,7 @@ def index(request):
         'banner':banner,
         'ykien':ykien,
         'cate':cate,
+        'tp':tp,
     }
     return render(request, "raovat/index.html",data)
 

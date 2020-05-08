@@ -23,6 +23,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('home.urls')),
     path('tai-khoan/', include('taikhoan.urls')),
+    path('tim-kiem/', include('timkiem.urls')),
     path('', include('sanpham.urls')),
 ]
 if settings.DEBUG:
