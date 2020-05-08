@@ -22,36 +22,27 @@
               <div class="col-md-12">
                 {{ s.mota|safe }}
                 <div>
-                  <form class="book-now-home">
+                  <form class="book-now-home" action="{% url 'timkiem:tim-kiem' %}" method="GET">
                     <div class="form-group">
-                      <input type="email" class="form-control text-truncate" placeholder="What are you looking for">
+                      <input type="text" name="tukhoa" class="form-control text-truncate" placeholder="Nhập từ khoá tìm kiếm...">
                     </div>
                     <div class="form-group selectdiv">
-                      <select class="form-control text-truncate">
-                        <option>Your Location</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                      <select class="form-control text-truncate" name="tp">
+                          <option value="">Chọn thành phố</option>
+                          {% for tp in tp %}
+                        <option value="{{ tp.id }}">{{ tp.title }}</option>
+                      {% endfor %}
                       </select>
                     </div>
                     <div class="form-group selectdiv">
-                      <select class="form-control border-right-0 text-truncate">
-                        <option>Select Category</option>
-                        <option>Vehicles</option>
-                        <option>Electronics</option>
-                        <option>Mobiles</option>
-                        <option>Furniture</option>
-                        <option>Fashion</option>
-                        <option>Real Estate</option>
-                        <option>Animals</option>
-                        <option>Education</option>
-                        <option>Baby products</option>
-                        <option>Services</option>
-                        <option>Furniture</option>
+                      <select class="form-control border-right-0 text-truncate" name="dm">
+                        <option value="">Chọn danh mục</option>
+                          {% for cate in cate %}
+                        <option value="{{ cate.id }}">{{ cate.title }}</option>
+                      {% endfor %}
                       </select>
                     </div>
-                    <button type="submit" class="btn btn-primary booknow btn-skin">Search Now</button>
+                    <button type="submit" class="btn btn-primary booknow btn-skin">Tìm kiếm</button>
                   </form>
                 </div>
               </div>
@@ -68,36 +59,27 @@
               <div class="col-md-12">
                 {{ s.mota|safe }}
                 <div>
-                  <form class="book-now-home">
+                  <form class="book-now-home" action="{% url 'timkiem:tim-kiem' %}" method="GET">
                     <div class="form-group">
-                      <input type="email" class="form-control text-truncate" placeholder="What are you looking for">
+                      <input type="text" name="tukhoa" class="form-control text-truncate" placeholder="Nhập từ khoá tìm kiếm...">
                     </div>
                     <div class="form-group selectdiv">
-                      <select class="form-control text-truncate">
-                        <option>Your Location</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                      <select class="form-control text-truncate" name="tp">
+                          <option value="">Chọn thành phố</option>
+                          {% for tp in tp %}
+                        <option value="{{ tp.id }}">{{ tp.title }}</option>
+                      {% endfor %}
                       </select>
                     </div>
                     <div class="form-group selectdiv">
-                      <select class="form-control border-right-0 text-truncate">
-                        <option>Select Category</option>
-                        <option>Vehicles</option>
-                        <option>Electronics</option>
-                        <option>Mobiles</option>
-                        <option>Furniture</option>
-                        <option>Fashion</option>
-                        <option>Real Estate</option>
-                        <option>Animals</option>
-                        <option>Education</option>
-                        <option>Baby products</option>
-                        <option>Services</option>
-                        <option>Furniture</option>
+                      <select class="form-control border-right-0 text-truncate" name="dm">
+                        <option value="">Chọn danh mục</option>
+                          {% for cate in cate %}
+                        <option value="{{ cate.id }}">{{ cate.title }}</option>
+                      {% endfor %}
                       </select>
                     </div>
-                    <button type="submit" class="btn btn-primary booknow btn-skin">Search Now</button>
+                    <button type="submit" class="btn btn-primary booknow btn-skin">Tìm kiếm</button>
                   </form>
                 </div>
               </div>
@@ -429,8 +411,6 @@
                   </div>
 </li>
           {% endfor %}
-
-        
       </ul>
       <!-- /#myCarousel --> 
       

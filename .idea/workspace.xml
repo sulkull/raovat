@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15ac53a2-8101-4001-a60e-c0c35294d176" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/js/slider-product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/raovat/page/list-bai-viet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/raovat/page/list-danh-muc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/raovat/page/ket-qua-tim-kiem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/timkiem/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/home/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/raovat/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/raovat/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanpham/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/raovat/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/raovat/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sanpham/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sanpham/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sanpham/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/raovat/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/raovat/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/raovat/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/raovat/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/raovat/page/detail-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/page/detail-page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/raovat/post/danh-sach-bai.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/post/danh-sach-bai.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/raovat/user/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/raovat/user/dashboard.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,47 +37,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sanpham/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="195" column="9" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/raovat/post/danh-sach-bai.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="112" column="6" lean-forward="true" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/raovat/footer.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="85" column="56" lean-forward="true" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/raovat/main.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/raovat/index.html">
+        <entry file="file://$PROJECT_DIR$/sanpham/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="444" selection-start-line="444" selection-end-line="444" />
+            <state relative-caret-position="221">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#42#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,9 +54,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -142,9 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/taikhoan/migrations/0001_initial.py" />
-        <option value="$PROJECT_DIR$/taikhoan/apps.py" />
-        <option value="$PROJECT_DIR$/taikhoan/tokens.py" />
         <option value="$PROJECT_DIR$/taikhoan/templates/pages/activeemail.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/error.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/confirm.html" />
@@ -163,7 +114,6 @@
         <option value="$PROJECT_DIR$/taikhoan/models.py" />
         <option value="$PROJECT_DIR$/taikhoan/admin.py" />
         <option value="$PROJECT_DIR$/templates/raovat/user/thong-tin-tai-khoan.html" />
-        <option value="$PROJECT_DIR$/raovat/urls.py" />
         <option value="$PROJECT_DIR$/sanpham/admin.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/2ed1b904-671f-4845-997e-a4a681311808/console.sql" />
         <option value="$PROJECT_DIR$/thanhpho/models.py" />
@@ -176,14 +126,10 @@
         <option value="$PROJECT_DIR$/templates/raovat/post/delete-post.html" />
         <option value="$PROJECT_DIR$/templates/raovat/user/dashboard.html" />
         <option value="$PROJECT_DIR$/home/urls.py" />
-        <option value="$PROJECT_DIR$/sanpham/models.py" />
-        <option value="$PROJECT_DIR$/raovat/settings.py" />
         <option value="$PROJECT_DIR$/home/admin.py" />
-        <option value="$PROJECT_DIR$/home/views.py" />
         <option value="$PROJECT_DIR$/home/models.py" />
         <option value="$PROJECT_DIR$/templates/raovat/post/danh-sach-bai.html" />
         <option value="$PROJECT_DIR$/static/css/style.css" />
-        <option value="$PROJECT_DIR$/sanpham/urls.py" />
         <option value="$PROJECT_DIR$/static/js/slider-product.js" />
         <option value="$PROJECT_DIR$/templates/raovat/header.html" />
         <option value="$PROJECT_DIR$/templates/raovat/page/list-bai-viet.html" />
@@ -192,11 +138,19 @@
         <option value="$PROJECT_DIR$/templates/raovat/page/detail-page.html" />
         <option value="$PROJECT_DIR$/templates/raovat/main.html" />
         <option value="$PROJECT_DIR$/templates/raovat/footer.html" />
+        <option value="$PROJECT_DIR$/raovat/settings.py" />
+        <option value="$PROJECT_DIR$/raovat/urls.py" />
+        <option value="$PROJECT_DIR$/sanpham/models.py" />
+        <option value="$PROJECT_DIR$/timkiem/urls.py" />
+        <option value="$PROJECT_DIR$/home/views.py" />
+        <option value="$PROJECT_DIR$/timkiem/views.py" />
         <option value="$PROJECT_DIR$/templates/raovat/index.html" />
+        <option value="$PROJECT_DIR$/templates/raovat/page/ket-qua-tim-kiem.html" />
+        <option value="$PROJECT_DIR$/sanpham/urls.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="896" />
     <option name="height" value="735" />
@@ -217,36 +171,7 @@
             <path>
               <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
               <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="raovat" type="b2602c69:ProjectViewProjectNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="raovat" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="sanpham" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -259,7 +184,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/raovat/page" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -271,16 +196,16 @@
     <property name="settings.editor.selected.configurable" value="database.main" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\CODE_DO_AN\raovat\templates\raovat\post" />
-      <recent name="F:\CODE_DO_AN\raovat\static" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat\page" />
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat\post" />
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat" />
       <recent name="F:\CODE_DO_AN\raovat\templates\raovat\user" />
       <recent name="F:\CODE_DO_AN\raovat" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\CODE_DO_AN\raovat\templates\raovat\post" />
+      <recent name="F:\CODE_DO_AN\raovat\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -343,11 +268,17 @@
       <workItem from="1587050877984" duration="22723000" />
       <workItem from="1587159517197" duration="9381000" />
       <workItem from="1587191018276" duration="40326000" />
+      <workItem from="1587410819266" duration="694000" />
+      <workItem from="1588526019730" duration="9979000" />
+      <workItem from="1588613418492" duration="599000" />
+      <workItem from="1588771223594" duration="204000" />
+      <workItem from="1588831047652" duration="238000" />
+      <workItem from="1588951611997" duration="2229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173239000" />
+    <option name="totallyTimeSpent" value="187182000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -359,15 +290,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4311649" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23827533" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.049099836" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.43535188" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -376,7 +307,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3535188" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.35188216" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -416,38 +347,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/media/media/avatar/2020/04/14/Picture1_DTmelGy.png" />
-    <entry file="file://$PROJECT_DIR$/media/media/avatar/2020/04/14/Picture1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/thongtintaikhoan.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="57" column="23" lean-forward="true" selection-start-line="57" selection-start-column="23" selection-end-line="57" selection-end-column="23" />
-          <folding>
-            <element signature="e#4519#4570#0#HTML" expanded="true" />
-            <element signature="e#4711#4737#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/taikhoan/templates/pages/doimatkhau.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="59" column="38" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="38" />
-          <folding>
-            <element signature="e#1889#1914#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/contrib/admin/templates/admin/base_site.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/Lib/site-packages/django/contrib/admin/templates/admin/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -486,16 +385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raovat/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
-          <folding>
-            <element signature="e#630#662#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/raovat/user/dang-nhap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -526,16 +415,6 @@
           <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/thanhpho/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -621,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raovat/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="56" column="67" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/taikhoan/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -651,16 +523,6 @@
           <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="26" column="22" lean-forward="true" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -718,33 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sanpham/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/page/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="16" column="67" lean-forward="true" selection-start-line="16" selection-start-column="67" selection-end-line="16" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sanpham/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-772">
@@ -759,40 +594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="76" column="32" selection-start-line="76" selection-start-column="32" selection-end-line="76" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/post/danh-sach-bai.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="112" column="6" lean-forward="true" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/raovat/page/detail-page.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="266" selection-start-line="266" selection-end-line="266" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/page/list-danh-muc.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#919#1922#0#HTML" />
-            <element signature="e#2363#6237#0#HTML" />
-            <element signature="e#2407#6226#0#HTML" />
-            <element signature="e#6487#7715#0#HTML" />
-            <element signature="e#3535#3557#0#HTML" expanded="true" />
-            <element signature="e#6008#6215#0#HTML" />
-            <element signature="e#24092#24252#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -806,10 +611,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sanpham/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/raovat/post/danh-sach-bai.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="195" column="9" selection-start-line="195" selection-start-column="9" selection-end-line="195" selection-end-column="9" />
+        <state relative-caret-position="1904">
+          <caret line="112" column="6" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1445">
+          <caret line="85" column="56" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -820,17 +632,135 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/raovat/footer.html">
+    <entry file="file://$PROJECT_DIR$/templates/raovat/page/category.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="85" column="56" lean-forward="true" selection-start-line="85" selection-start-column="56" selection-end-line="85" selection-end-column="56" />
+        <state relative-caret-position="51">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/page/list-danh-muc.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timkiem/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raovat/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raovat/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+          <folding>
+            <element signature="e#630#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sanpham/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="26" column="14" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1366">
+          <caret line="49" column="89" lean-forward="true" selection-start-line="49" selection-start-column="89" selection-end-line="49" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timkiem/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/thanhpho/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sanpham/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="204" column="12" lean-forward="true" selection-start-line="204" selection-start-column="12" selection-end-line="204" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/raovat/page/ket-qua-tim-kiem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="69" column="56" selection-start-line="69" selection-start-column="56" selection-end-line="69" selection-end-column="56" />
+          <folding>
+            <element signature="e#712#730#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/timkiem/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/raovat/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="444" selection-start-line="444" selection-end-line="444" />
+        <state relative-caret-position="121">
+          <caret line="61" column="95" selection-start-line="61" selection-start-column="83" selection-end-line="61" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sanpham/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
