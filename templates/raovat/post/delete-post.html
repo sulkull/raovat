@@ -1,0 +1,57 @@
+{% extends 'raovat/user/dashboard.html' %}
+{% load static %}
+{% load humanize %}
+{% block page %}
+<div class="dashboard_main">
+    <div class="dashboard_heding">
+        <h3> My Add </h3>
+    </div>
+    <div class="row">
+        <div class=" col-md-12 all_ads">
+            <ul class="list-unstyled m-0">
+                <li class="my_ad m-b-15"><a href="#"> All(42) </a>
+                </li>
+                <li class="my_ad m-b-15"><a href="#"> Published (88) </a>
+                </li>
+                <li class="my_ad m-b-15"><a href="#"> Featured (12) </a>
+                </li>
+                <li class="my_ad m-b-15"><a href="#"> Sold (02) </a>
+                </li>
+                <li class="my_ad m-b-15"><a href="#"> Active (42) </a>
+                </li>
+                <li class="my_ad m-b-15"><a href="#"> Expired (01) </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row m-t-15">
+        <div id="recent-transactions" class="col-12"> <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+            <div class="heading-elements"> </div>
+            <div class="row-delete" style="margin: 50px;">
+                <form id="edit-job-form" action='' method='POST'>
+                    {% csrf_token %}
+                    <span>Bạn có muốn xóa  "<b style="color: red">{{ object.title }} - {{ object.id }}</b>" không ?</span>
+                </br>
+                    <div class="xoa" style=" padding: 40px;">
+                    <p style="line-height: 1.5"><input type='submit' value='Xóa Nhé' />
+                    </p>
+                    </div>
+                        <div class="quaylai">
+                    <br><a href='{% url 'sanpham:Danh-sach-bai' %}'>Quay lại - Không Xóa</a>
+                        </div>
+                </form>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+form#edit-job-form {
+    display: block;
+    background: aliceblue;
+    padding: 30px;
+    border-radius: 10px;
+}
+</style>
+{% endblock %}

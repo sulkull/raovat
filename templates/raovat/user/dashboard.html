@@ -1,0 +1,53 @@
+{% extends 'raovat/main.html' %}
+{% load static %}
+{% block main %}
+<style>
+.header {
+    position: unset;
+}
+</style>
+<div class="iner_breadcrumb p-t-20 p-b-20">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Tài khoản</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Đăng kí</li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- End breadcrumb -->
+<!---Thong tin tk-->
+<section class="dashboard_sec m-t-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="dashboard_menu">
+          <div class="dashbord_img">
+            <div class="dashboard_back"> <img class="img-fluid w-100" src="{% static 'images/dash-background.png' %}" alt="Classified Plus"> </div>
+            <div class="rounded_img"> <img class="img-fluid" src="{% static 'images/aditya.png' %}" alt="Classified Plus"> </div>
+            <div class="aditya"> {{s}}</div>
+          </div>
+          <ul class="list-unstyled  m-t-25">
+            <li class="{{ class.dash }}"><span><i class="fa fa-sliders"></i></span><a href="#"> Dashboard </a></li>
+            <li class="{{ class.profile }}"><span><i class="fa fa-cog"></i></span><a href="{% url 'taikhoan:thongtintaikhoan' %}"> Thông tin cá nhân </a></li>
+            <li class="{{ class.pass }}"><span><i class="fa fa-database"></i></span><a href="{% url 'taikhoan:doimatkhau' %}">Đổi mật khẩu </a></li>
+            <li class="{{ class.post }}"><span><i class="fa fa-shopping-cart"></i></span><a href="{% url 'sanpham:Danh-sach-bai' %}"> Danh sách bài viết </a></li>
+            <li class="{{ class.3 }}"><span><i class="fa fa-heart"></i></span><a href="#"> My Favourites </a></li>
+              <li class="{{ class.1 }}"><span><i class="fa fa-envelope"></i></span><a href="#"> Offers/Messages </a></li>
+            <li class="{{ class.4 }}"><span><i class="fa fa-star"></i></span><a href="#"> Privacy Settings </a></li>
+            <li class="{{ class.logouts }}"><span><i class="fa fa-sign-in"></i></span><a href="{% url 'taikhoan:dangxuat' %}"> Logout </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9">
+          {% block page %}
+          {% endblock %}
+        </div>
+    </div>
+  </div>
+</section>
+<!---end Thong tin tk-->
+
+{% endblock %}

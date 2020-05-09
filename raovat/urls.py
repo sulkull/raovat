@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 
 urlpatterns = [
-    path('quanly/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('home.urls')),
     path('tai-khoan/', include('taikhoan.urls')),
