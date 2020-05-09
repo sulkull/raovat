@@ -1,4 +1,4 @@
-#!F:\CODE_DO_AN\raovat\env\Scripts\python.exe
+#!D:\CODE_DO_AN\raovat\env\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'setuptools==40.8.0','console_scripts','easy_install'
 __requires__ = 'setuptools==40.8.0'
 import re

@@ -114,7 +114,6 @@
       <div class="col-md-9">
         <div class="description_box">
           {{ post.mota|safe }}
-
             <button class="btn-primary" type="button" data-toggle="modal"
                     data-target="#ttlh">Click để xem thông tin liên hệ
             </button>
@@ -127,7 +126,6 @@
                 <a class="button" href="sms:{{ post.user.SDT }}" target="_blank">
                     <i class="fa fa-sms fa-flip-horizontal"></i> Nhắn tin</a>
             </div>
-
         </div>
       </div>
       <div class="col-md-3">
@@ -265,7 +263,7 @@
 }
     </style>
 
-<script src="https://free-html.com/product/wp-content/themes/sanpham/libs/elevatezoom/jquery.elevatezoom.js"></script>
-<script src="https://free-html.com/product/wp-content/themes/sanpham/js/jquery.reel-min.js"></script>
+<script src="{% static 'js/jquery.elevatezoom.js' %}"></script>
+{#<script src="https://free-html.com/product/wp-content/themes/sanpham/js/jquery.reel-min.js"></script>#}
 <script type="text/javascript" src="{% static "js/slider-product.js" %}"></script>
     {% endblock %}
