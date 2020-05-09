@@ -1,5 +1,0 @@
-{% autoescape off %}
-    Xin chào {{ user.username }},
-    Hãy click vào link dưới đây để xác nhận emai của bạn,
-    http://{{ domain }}{% url 'taikhoan:activate' uidb64=uid token=token %}
-{% endautoescape %}

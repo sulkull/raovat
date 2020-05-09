@@ -1,7 +1,0 @@
-{% if user.username %}
-    <li style="color: white;">Xin chào {{user.username}}</li>
-    <li><a href="{% url 'taikhoan:dangxuat' %}">Đăng xuất</a></li>
-{% else %}
-    <li><a href="{% url 'taikhoan:dangky' %}">Đăng ký</a></li>
-    <li><a href="{% url 'taikhoan:dangnhap' %}">Đăng nhập</a></li>
-{% endif %}
