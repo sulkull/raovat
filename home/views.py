@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from django.urls import reverse_lazy
 
+from blog.models import Baiviet
 from home.models import Slider, thutu, Ykienkhach
 from sanpham.models import Post, subcategory, category
 from taikhoan.models import Profile
@@ -17,12 +18,14 @@ def index(request):
     banner = Slider.objects.filter(action=True).order_by(Lower('thutu').asc())
     ykien = Ykienkhach.objects.filter(action=True)
     tp = thanhpho.objects.all()
+    blog = Baiviet.objects.all()
     try:
         post = Post.objects.all()
     except Post.DoesNotExist:
         return redirect(reverse_lazy('home:404-error'))
     data = {
         'post':post,
+        'blog':blog,
         'user':user,
         'danhmuc':danhmuc,
         'banner':banner,

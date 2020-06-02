@@ -131,132 +131,38 @@
     <!-- Row  -->
     <div class="row justify-content-center">
       <div class="col-md-7 text-center">
-        <h2 class="title">Trending Ads</h2>
-        <h6 class="subtitle">Explore the greates places in the city.</h6>
+        <h2 class="title">Tin tức </h2>
+        <h6 class="subtitle">Các tin tức - hướng dẫn bán hàng nhanh chóng hiệu quả.</h6>
       </div>
     </div>
     <!-- Row  -->
     <div class="row">
+        {% for p in blog %}
+            <a href="{% url 'blog:Chi-tiet-tin-tuc' p.slug %}"?>
       <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
         <div class="trending-parts bg-light rounded m-t-30">
-          <div class="trending-img"> <img class="img-fluid rounded-top" src="{%static 'images/Trending-img-1.png' %}" alt="Classified Plus">
-            <div class="featured-new"> <a href="#"> Open New </a> </div>
+          <div class="trending-img">
+              <img class="img-fluid rounded-top" src="{{ p.hinhanh.url }}" alt="{{ p.tieude }}"style="height: 200px;width: 100%">
             <div class="trending_hed text-left">
-              <h4> Cities Finest Spa </h4>
-              <p> Kenny Dr Granada Hills, CA 91344 </p>
+              <h4 style="background-color: #00000082;padding: 5px;border-radius: 10px;font-size: 15px;">{{ p.tieude|capfirst|slice:100 }}.. </h4>
             </div>
           </div>
           <div class="trending-text p-t-25 p-b-20 p-l-15 p-r-15">
             <div class="text-top d-flex justify-content-between  m-t-15 p-b-10">
-              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> 5</a> <a href="#"><i class="fa fa-comment-o"></i> 8</a> </div>
-              <div class="trending-right"> <a href="#"> Fashion </a> </div>
+              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> {{ p.luotxem }}</a> </div>
+              <div class="trending-right"> <a href="{% url 'blog:Xem-danh-muc-blog' p.danhmuc.slug %}"> {{ p.danhmuc }} </a> </div>
             </div>
-            <div class="trending-bottum d-flex p-t-15 p-b-10"> <a href="#" class="a m-r-15 text-uppercase m-t-5 color_1"> a </a>
-              <p> Lorem Ipsum is simply dummy text and of the printing typesetting </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-        <div class="trending-parts bg-light rounded m-t-30">
-          <div class="trending-img"> <img class="img-fluid rounded-top" src="{%static 'images/Trending-img-2.png' %}" alt="Classified Plus">
-            <div class="trending_hed text-left">
-              <h4>Top Furniture </h4>
-              <p> Kenny Dr Granada Hills, CA 91344 </p>
-            </div>
-          </div>
-          <div class="trending-text p-t-25 p-b-20 p-l-15 p-r-15">
-            <div class="text-top d-flex justify-content-between  m-t-15 p-b-10">
-              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> 5</a> <a href="#"><i class="fa fa-comment-o"></i> 8</a> </div>
-              <div class="trending-right"> <a href="#"> Furniture </a> </div>
-            </div>
-            <div class="trending-bottum d-flex p-t-15 p-b-10"> <a href="#" class="a m-r-15 text-uppercase m-t-5 color_2"> b </a>
-              <p> Lorem Ipsum is simply dummy text and of the printing typesetting </p>
+            <div class="trending-bottum d-flex p-t-15 p-b-10" style="display: block">
+                <a href="#" class="a m-r-15 text-uppercase m-t-5 color_1"> {{ p.motangan|slice:1 }} </a>
+              <p> {{ p.motangan|slice:100 }}. </p>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-        <div class="trending-parts bg-light rounded m-t-30">
-          <div class="trending-img"> <img class="img-fluid rounded-top" src="{%static 'images/Trending-img-3.png' %}" alt="Classified Plus">
-            <div class="featured-new"> <a href="#"> Open New </a> </div>
-            <div class="trending_hed text-left">
-              <h4> Cream Restaurant </h4>
-              <p> Kenny Dr Granada Hills, CA 91344 </p>
-            </div>
-          </div>
-          <div class="trending-text p-t-25 p-b-20 p-l-15 p-r-15">
-            <div class="text-top d-flex justify-content-between  m-t-15 p-b-10">
-              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> 5</a> <a href="#"><i class="fa fa-comment-o"></i> 8</a> </div>
-              <div class="trending-right"> <a href="#"> Fast Food </a> </div>
-            </div>
-            <div class="trending-bottum d-flex p-t-15 p-b-10"> <a href="#" class="a m-r-15 text-uppercase m-t-5 color_3"> c </a>
-              <p> Lorem Ipsum is simply dummy text and of the printing typesetting </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-        <div class="trending-parts bg-light rounded m-t-30">
-          <div class="trending-img"> <img class="img-fluid rounded-top" src="{%static 'images/Trending-img-4.png' %}" alt="Classified Plus">
-            <div class="trending_hed text-left">
-              <h4> Auto Frame Business </h4>
-              <p> Kenny Dr Granada Hills, CA 91344 </p>
-            </div>
-          </div>
-          <div class="trending-text p-t-25 p-b-20 p-l-15 p-r-15">
-            <div class="text-top d-flex justify-content-between  m-t-15 p-b-10">
-              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> 5</a> <a href="#"><i class="fa fa-comment-o"></i> 8</a> </div>
-              <div class="trending-right"> <a href="#"> Vehicles </a> </div>
-            </div>
-            <div class="trending-bottum d-flex p-t-15 p-b-10"> <a href="#" class="a m-r-15 text-uppercase m-t-5 color_1"> e </a>
-              <p> Lorem Ipsum is simply dummy text and of the printing typesetting </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-        <div class="trending-parts bg-light rounded m-t-30">
-          <div class="trending-img"> <img class="img-fluid rounded-top" src="{%static 'images/Trending-img-5.png' %}" alt="Classified Plus">
-            <div class="featured-new"> <a href="#"> Open New </a> </div>
-            <div class="trending_hed text-left">
-              <h4> USA Universities </h4>
-              <p> Kenny Dr Granada Hills, CA 91344 </p>
-            </div>
-          </div>
-          <div class="trending-text p-t-25 p-b-20 p-l-15 p-r-15">
-            <div class="text-top d-flex justify-content-between  m-t-15 p-b-10">
-              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> 5</a> <a href="#"><i class="fa fa-comment-o"></i> 8</a> </div>
-              <div class="trending-right"> <a href="#"> Education </a> </div>
-            </div>
-            <div class="trending-bottum d-flex p-t-15 p-b-10"> <a href="#" class="a m-r-15 text-uppercase m-t-5 color_1"> e </a>
-              <p> Lorem Ipsum is simply dummy text and of the printing typesetting </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-        <div class="trending-parts bg-light rounded m-t-30">
-          <div class="trending-img"> <img class="img-fluid rounded-top" src="{%static 'images/Trending-img-6.png' %}" alt="Classified Plus">
-            <div class="featured-new"> <a href="#"> Open New </a> </div>
-            <div class="trending_hed text-left">
-              <h4>Cream Restaurant </h4>
-              <p> Kenny Dr Granada Hills, CA 91344 </p>
-            </div>
-          </div>
-          <div class="trending-text p-t-25 p-b-20 p-l-15 p-r-15">
-            <div class="text-top d-flex justify-content-between  m-t-15 p-b-10">
-              <div class="trending-left"><a href="#" class="m-r-5"><i class="fa fa-heart-o"></i> 5</a> <a href="#"><i class="fa fa-comment-o"></i> 8</a> </div>
-              <div class="trending-right"> <a href="#"> Matrimony </a> </div>
-            </div>
-            <div class="trending-bottum d-flex p-t-15 p-b-10"> <a href="#" class="a m-r-15 text-uppercase m-t-5 color_3"> c </a>
-              <p> Lorem Ipsum is simply dummy text and of the printing typesetting </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button class="view-btn hvr-pulse-grow" type="submit" value="button">View all</button>
+            </a>
+        {% endfor %}
     </div>
+  <button class="view-btn hvr-pulse-grow" type="submit" value="button">Xem tất cả</button>
   </div>
 </section>
 <!-- End Trending_ads --> 
@@ -294,8 +200,8 @@
     <!-- Row  -->
     <div class="row justify-content-center">
       <div class="col-md-7 text-center">
-        <h2 class="title">Why We Are Best</h2>
-        <h6 class="subtitle">Explore the greates places in the city.</h6>
+        <h2 class="title">Chúng tôi có gì</h2>
+        <h6 class="subtitle">Điều làm chúng tôi nổi bật.</h6>
       </div>
     </div>
     <!-- Row  -->
@@ -304,8 +210,8 @@
         <div class="d-flex m-t-40">
           <div class="counter_icon mr-3"><i class="fa fa-eye"></i> </div>
           <div class="counter_number">
-            <h3> Eye on Quality </h3>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+            <h3> Khả năng tiếp cận </h3>
+            <p> Chúng tôi cung cấp cho bạn 1 nguồn khách hàng lớn giúp bạn dễ dàng tiếp cận được lượng khách hàng yêu thích. </p>
           </div>
         </div>
       </div>
@@ -313,8 +219,8 @@
         <div class="d-flex m-t-40 justify-content-between">
           <div class="counter_icon mr-3"><i class="fa fa-lock"></i> </div>
           <div class="counter_number">
-            <h3> Protection Guaranteed </h3>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+            <h3> Bảo mật </h3>
+            <p> Chúng tôi bảo mật các thông tin của khách hàng , bảo mật thông tin cá nhân.tiếp cận được lượng khách hàng  </p>
           </div>
         </div>
       </div>
@@ -322,8 +228,8 @@
         <div class="d-flex m-t-40">
           <div class="counter_icon mr-3"><i class="fa fa-comments"></i></div>
           <div class="counter_number">
-            <h3> 24/7 Support </h3>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+            <h3>  Hỗ trợ 24/7  </h3>
+            <p> Với đội ngũ yêu nghề nhiệt huyết chúng tôi sẽ hỗ trợ nhiệt tình nhất có thể cho khách hàng. </p>
           </div>
         </div>
       </div>
@@ -331,8 +237,8 @@
         <div class="d-flex m-t-40">
           <div class="counter_icon mr-3"><i class="fa fa-laptop"></i></div>
           <div class="counter_number">
-            <h3> Prompt Complaint Response </h3>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+            <h3> Khả năng tương thích </h3>
+            <p> Với đội ngũ yêu nghề nhiệt huyết chúng tôi sẽ hỗ trợ nhiệt tình nhất có thể cho khách hàng.</p>
           </div>
         </div>
       </div>
@@ -340,8 +246,8 @@
         <div class="d-flex m-t-40 d-flex">
           <div class="counter_icon mr-3"><i class="fa fa-check-square-o"></i></div>
           <div class="counter_number">
-            <h3> Verified Ads </h3>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+            <h3> Đăng tin tiện lợi </h3>
+            <p>Với đội ngũ yêu nghề nhiệt huyết chúng tôi sẽ hỗ trợ nhiệt tình nhất có thể cho khách hàng.. </p>
           </div>
         </div>
       </div>
@@ -349,8 +255,8 @@
         <div class="d-flex m-t-40 d-flex">
           <div class="counter_icon mr-3"><i class="fa fa-leaf"></i></div>
           <div class="counter_number">
-            <h3> Secure Payment Gateway </h3>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's. </p>
+            <h3> Kinh nghiệm vững chắc</h3>
+            <p> Với đội ngũ yêu nghề nhiệt huyết chúng tôi sẽ hỗ trợ nhiệt tình nhất có thể cho khách hàng.</p>
           </div>
         </div>
       </div>
@@ -365,9 +271,10 @@
     <!-- Row  -->
     <div class="row justify-content-center">
       <div class="col-md-10 text-center">
-        <h2 class="title">Download on App Store</h2>
+        <h2 class="title">Kết nối với chúng tôi</h2>
         <div class="clearfix"></div>
-        <h6 class="subtitle">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</h6>
+        <h6 class="subtitle">Khách hàng có thể kết nối với chúng tôi qua các app - ứng dụng , dễ dàng thao tác , tiện lợi
+         giúp tiếp cận với khách hàng nhanh chóng</h6>
       </div>
     </div>
     <!-- Row  -->
@@ -387,8 +294,8 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-5 text-center">
-        <h2 class="title">Testimonials</h2>
-        <h6 class="subtitle">What Our Clients Says</h6>
+        <h2 class="title">Đánh giá </h2>
+        <h6 class="subtitle">Khách hàng nghĩ gì về chúng tôi</h6>
       </div>
     </div>
     <div class="col-xs-12 m-t-40">

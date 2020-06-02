@@ -59,7 +59,6 @@ def post(request):
 # Sua bai viet
 def post_edit(request, id):
     post = get_object_or_404(Post, id=id)
-
     ImageFormSet = modelformset_factory(Images, form=ImageForm, extra=3, max_num=3)
     # 'extra' means the number of photos that you can upload   ^
     if request.method == 'POST':
@@ -108,10 +107,11 @@ def post_edit(request, id):
 
 @login_required(login_url='tai-khoan/dang-nhap')
 def danh_sach_bai(request):
+    user = request.user
     pub = Post.objects.filter(action=True)
     hiden = Post.objects.filter(action=False)
     try:
-        post = Post.objects.all()
+        post = Post.objects.filter(user=user)
     except Post.DoesNotExist:
         return redirect(reverse_lazy('home:404-error'))
     ## phan trang
@@ -166,7 +166,6 @@ class XoaPost(DeleteView):
 
     def get_success_url(self):
         return reverse('sanpham:Danh-sach-bai')
-
 # xem bai viet
 def XemPost(request, slug):
     try:
@@ -175,6 +174,8 @@ def XemPost(request, slug):
         raise Http404(reverse('home:404-error'))
     post_lien_quan = Post.objects.filter(category=post.category,action=True).order_by('?')
     post_lien_quan_tp = Post.objects.filter(category=post.category,thanhphos=post.thanhphos, action=True)
+    post.luotxem += 1
+    post.save()
     data = {
         'post':post,
         'plq':post_lien_quan,
@@ -184,14 +185,13 @@ def XemPost(request, slug):
 
 # xem danh muc
 def XemCategory(request, slug):
+    cate = category.objects.get(slug=slug)
     try:
-        cate = category.objects.get(slug=slug)
+        post = Post.objects.filter(category=cate)
+        danhmuc = category.objects.all()
+        tp = thanhpho.objects.all()
     except Post.DoesNotExist:
         raise Http404(reverse('home:404-error'))
-    post = Post.objects.filter(category=cate)
-    danhmuc = category.objects.all()
-    tp = thanhpho.objects.all()
-
     ## phan trang
     p = 8
     paginator = Paginator(post, p)

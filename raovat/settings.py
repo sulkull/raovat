@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'sanpham',
     'taikhoan',
     'timkiem',
+    'blog',
+
 
     #plugin
     'ckeditor',

@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('home.urls')),
     path('tai-khoan/', include('taikhoan.urls')),
     path('tim-kiem/', include('timkiem.urls')),
+    path('', include('blog.urls')),
     path('', include('sanpham.urls')),
 ]
 if settings.DEBUG:

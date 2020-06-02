@@ -14,7 +14,8 @@ urlpatterns = [
 
     #Hien thi bai viet - danh muc
     path('tin-dang/<str:slug>', XemPost, name='Chi-tiet-bai'),
-    path('<str:slug>', XemCategory, name='Xem-danh-muc'),
+    # path('luu-tin/<str:slug>', LuuTin, name='Luu-tin'),
+    path('xem/<str:slug>', XemCategory, name='Xem-danh-muc'),
 
     # trang thai
     path('active/<int:id>', trang_thai_bat, name='Trang-thai-post_active'),

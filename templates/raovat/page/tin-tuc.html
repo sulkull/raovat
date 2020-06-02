@@ -1,0 +1,160 @@
+{% extends 'raovat/main.html' %}
+{% load static %}
+{% load humanize %}
+{% block main %}
+<style xmlns="http://www.w3.org/1999/html">.header {position: unset;}</style>
+<!-- breadcrumb -->
+<div class="iner_breadcrumb p-t-20 p-b-20">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">{{ cate.title }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- End breadcrumb -->
+<section class="top_listings">
+  <div class="container">
+    <!-- Row  -->
+    <div class="row m-t-40 margin_top">
+       <div class="col-md-3 col-sm-12 col-xs-12">
+            <div class="sidebar-wrapper">
+              <div class="single-sidebar">
+                <form class="search-form" action="#">
+                  <input placeholder="Keywords" type="text">
+                  <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+              </div>
+              <div class="single-sidebar">
+                <div class="sec-title">
+                  <h3 class="all-categories">Danh mục</h3>
+                  <ul class="categories clearfix slide" style="">
+                      {% for c in danhmuc %}
+                    <li><a href="{% url 'blog:Xem-danh-muc-blog' c.slug %}">{{ c.tieude }}({{ c.baiviet_set.count }})</a></li>
+                      {% endfor %}
+                  </ul>
+                </div>
+                <div class="single-sidebar">
+              <div class="sec-title">
+                <h3 class="d_none">Latest Post</h3>
+              </div>
+              <ul class="latest-post">
+                  {% for p in bvm %}
+                <li class="d-flex">
+                  <div class="img-holder icon-space align-self-top">
+                      <img src="{{ p.hinhanh.url }}" style="width: 68px;height: 68px;"> </div>
+                  <div class="title-holder"> <a href="{% url 'blog:Chi-tiet-tin-tuc' p.slug %}">
+                    <h5 class="post-title"> {{ p.tieude }}</h5>
+                    </a>
+                    <h6 class="post-date"> {{ p.ngaytao|date:'d/m/yy' }} </h6>
+                  </div>
+                </li>
+                  {% endfor %}
+              </ul>
+            </div>
+              </div>
+
+            </div>
+
+          </div>
+       <div class="col-md-9 col-sm-12 col-xs-12">
+           <div class="blog-post">
+               <div class="single-blog-post">
+            <div class="img-holder"> <div class="img_up"><img src="{{ post.hinhanh.url }}" alt="{{ post.tieude }}" height="300px"></div>
+              <div class="overlay-style-two">{{ post.ngaytao|date:'d/m/yy' }}</div>
+              <div class="date_more">
+                <div class="text-holder">
+                  <h3 class="blog-title">{{ post.tieude }}</h3>
+                  <div class="meta-info clearfix">
+                    <ul class="post-info">
+                      <li><i class="fa fa-eye" aria-hidden="true"></i><a href="#">{{ post.luotxem }} lượt xem</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+                <style>.text.m-t-30 img {max-width: 100%;}</style>
+              <div class="text m-t-30" style="font-family: roboto;">
+                  <p>{{ post.mota|safe }}</p>
+                </div>
+              <div class="blog_post_barr">
+                <div class="Share pull-left">
+                  <ul>
+                    <li>Share: </li>
+                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i> </a></li>
+                    <li><a href="#"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i> </a></li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <hr>
+{#            <div class="media2">#}
+{#              <h3 class="panel-heading">About The Author</h3>#}
+{#              <div class="d-flex"> <img class="media-object icon-space align-self-top" src="images/blog4.png" alt="Classified Plus">#}
+{#                <div class="media-body">#}
+{#                  <h4 class="media-heading">Mr.John Christopher</h4>#}
+{#                  <p>Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. uni harum quidem sed rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilares impedit quo repellendus eligendi optio cumque nihilare impedit quo minus id quod maxime.</p>#}
+{#                  <a href="#" class="m-t-15 d-block">Support@Themes.com</a> </div>#}
+{#              </div>#}
+{#            </div>#}
+            <hr>
+            <div class="media2">
+              <h3 class="panel-heading">Bình luận</h3>
+              <div class="d-flex">
+                  <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3&appId=1974272112824526&autoLogAppEvents=1"></script>
+                  <div class="fb-comments" data-href="http://127.0.0.1:8000/{% url 'blog:Chi-tiet-tin-tuc' post.slug %}"
+                         data-width=""
+                         data-numposts="5">
+                  </div>
+
+              </div>
+            </div>
+            <hr>
+          </div>
+
+          <div class="clearfix"></div>
+        </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block style %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+			  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+    $(".all-categories").on('click', function(e){
+        $(".slide").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $(".condition").on('click', function(e){
+        $(".condition-slide").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $(".post-by").on('click', function(e){
+        $(".post-slide").slideToggle("slow");
+    });
+});
+
+$(document).ready(function(){
+    $(".price_r").on('click', function(e){
+        $(".price-range-block").slideToggle("slow");
+    });
+});
+</script>
+<script src="/static/js/price_range_script.js"></script>
+<script src="/static/js/jquery-ui.js"></script>
+        {% endblock %}

@@ -46,6 +46,7 @@ class category(models.Model):
 class Post(models.Model):
     user = models.ForeignKey(Profile,on_delete=models.CASCADE,null=False)
     ngaytao = models.DateTimeField(auto_now_add=True, null=True)
+    luotxem = models.IntegerField(default=1)
     title = models.CharField(max_length=100, null=False, unique=True)
     slug = models.SlugField(max_length=255)
     category = models.ForeignKey(category, on_delete=models.CASCADE, verbose_name='Chọn danh mục')

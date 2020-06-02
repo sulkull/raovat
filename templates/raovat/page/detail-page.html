@@ -43,7 +43,7 @@
               <ul class="list-unstyled text-capitalize m-b-0 m-t-15">
               <li class="d-inline-block p-r-20"><a href="#"> <i class="fa fa-clock-o"></i> <span> {{ post.ngaytao|date:'d/m/y' }} </span></a> </li>
               <li class="d-inline-block p-r-20"><a href="#"> <i class="fa fa-tags"></i><span> Mới </span></a> </li>
-              <li class="d-inline-block"><a href="#"> <i class="fa fa-eye"></i> <span> Lượt xem 15</span> </a> </li>
+              <li class="d-inline-block"><a href="#"> <i class="fa fa-eye"></i> <span> Lượt xem {% if post.luotxem > 1 %} {{ post.luotxem }} {% else %} {{ post.luotxem }} {% endif %}</span> </a> </li>
             </ul>
           </div>
             <div class="text-stars m-t-5">
@@ -187,8 +187,9 @@
         {% for p in plq|slice:'4' %}
       <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
         <div class="featured-parts rounded m-t-30">
-          <div class="featured-img"> <img class="img-fluid rounded-top" src="{% for h in p.images_set.all|slice:"1" %}{{ h.image.url }}{% endfor %}" style="height: 150px;">
-            <div class="featured-new bg_warning1"> <a href="#"> New </a> </div>
+          <div class="featured-img">
+              <img class="img-fluid rounded-top" src="{% for h in p.images_set.all|slice:"1" %}{{ h.image.url }}{% endfor %}" style="height: 150px;">
+            <div class="featured-new bg_warning1"> <a href="#"> Mới </a> </div>
           </div>
           <div class="featured-text">
             <div class="text-top d-flex justify-content-between ">
@@ -265,7 +266,9 @@
 }
     </style>
 
-<script src="https://free-html.com/product/wp-content/themes/sanpham/libs/elevatezoom/jquery.elevatezoom.js"></script>
-<script src="https://free-html.com/product/wp-content/themes/sanpham/js/jquery.reel-min.js"></script>
+{#<script src="https://free-html.com/product/wp-content/themes/sanpham/libs/elevatezoom/jquery.elevatezoom.js"></script>#}
+{#<script src="https://free-html.com/product/wp-content/themes/sanpham/js/jquery.reel-min.js"></script>#}
+    <script type="text/javascript" src="{% static "js/jquery.elevatezoom.js" %}"></script>
 <script type="text/javascript" src="{% static "js/slider-product.js" %}"></script>
+
     {% endblock %}
